@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pol&iacute;tica de Privacidade - WASUP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .legal-container {
+            max-width: 860px;
+            margin: 56px auto;
+            padding: 40px;
+            background: rgba(25, 20, 24, 0.52);
+            backdrop-filter: blur(16px);
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            position: relative;
+            z-index: 10;
+        }
+        .legal-container h1,
+        .legal-container h2 {
+            color: var(--primary);
+            margin: 0 0 18px;
+        }
+        .legal-container h2 {
+            margin-top: 34px;
+        }
+        .legal-container p,
+        .legal-container li {
+            line-height: 1.7;
+            margin-bottom: 14px;
+            color: var(--text-muted);
+        }
+        .legal-container ul {
+            padding-left: 20px;
+        }
+        .legal-lead {
+            font-size: 1.02rem;
+            color: var(--text-main);
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 26px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .legal-note {
+            padding: 16px 18px;
+            border-radius: 16px;
+            background: rgba(255, 59, 59, 0.08);
+            border: 1px solid rgba(255, 59, 59, 0.14);
+            color: var(--text-main);
+        }
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .footer {
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2" style="bottom: 5%; right: 10%;"></div>
+
+    <header class="header">
+        <div class="logo">
+            <span class="logo-text">WASUP</span>
+        </div>
+        <nav class="nav">
+            <a href="index.html">In&iacute;cio</a>
+            <a href="data-safety.html">Data Safety</a>
+        </nav>
+    </header>
+
+    <main class="legal-container glass-card">
+        <a href="index.html" class="back-link">&larr; Voltar para a p&aacute;gina inicial</a>
+        <h1>Pol&iacute;tica de Privacidade</h1>
+        <p><strong>&Uacute;ltima atualiza&ccedil;&atilde;o: 14 de abril de 2026</strong></p>
+        <p class="legal-lead">O WASUP foi criado para enviar recados curtos entre duas pessoas pareadas. Esta pol&iacute;tica explica quais dados s&atilde;o tratados, por que eles existem no app e como protegemos esse fluxo.</p>
+
+        <h2>1. Dados tratados pelo app</h2>
+        <p>Para o funcionamento do produto, o WASUP pode tratar os seguintes dados:</p>
+        <ul>
+            <li><strong>Identificador da conta Firebase:</strong> usado para autenticar o usu&aacute;rio no app e vincular seus dados t&eacute;cnicos.</li>
+            <li><strong>C&oacute;digo de pareamento:</strong> usado para localizar e conectar duas pessoas no app.</li>
+            <li><strong>Nome de exibi&ccedil;&atilde;o:</strong> definido pelo usu&aacute;rio para identifica&ccedil;&atilde;o visual dentro do pareamento.</li>
+            <li><strong>Chave p&uacute;blica de criptografia ponta a ponta:</strong> usada para que os dispositivos possam cifrar e decifrar mensagens entre si.</li>
+            <li><strong>Mensagens curtas e estado atual do par:</strong> o conte&uacute;do das mensagens e o &uacute;ltimo recado do par ficam armazenados em formato cifrado nos documentos do Firestore.</li>
+            <li><strong>Token do Firebase Cloud Messaging (FCM):</strong> usado para entregar notifica&ccedil;&otilde;es e acordar atualiza&ccedil;&otilde;es do widget.</li>
+            <li><strong>Dados locais no dispositivo:</strong> o app pode manter cache local do &uacute;ltimo estado exibido no widget e na interface para acelerar a experi&ecirc;ncia.</li>
+        </ul>
+
+        <h2>2. Como usamos esses dados</h2>
+        <ul>
+            <li>Autenticar o usu&aacute;rio e manter sua conta funcional.</li>
+            <li>Permitir o pareamento entre duas pessoas.</li>
+            <li>Cifrar, enviar, receber e exibir mensagens curtas.</li>
+            <li>Atualizar o widget e as notifica&ccedil;&otilde;es do aparelho.</li>
+            <li>Manter recursos pagos, como o modo premium, quando aplic&aacute;vel.</li>
+            <li>Atender solicita&ccedil;&otilde;es de exclus&atilde;o de conta e manuten&ccedil;&atilde;o operacional do servi&ccedil;o.</li>
+        </ul>
+
+        <h2>3. Como protegemos as mensagens</h2>
+        <p>As mensagens do WASUP s&atilde;o protegidas com criptografia ponta a ponta entre os dispositivos pareados. Isso significa que o conte&uacute;do &eacute; cifrado no cliente antes de ser salvo no banco e decifrado localmente no aparelho autorizado.</p>
+        <p>A transmiss&atilde;o de dados entre app e infraestrutura tamb&eacute;m ocorre com criptografia em tr&acirc;nsito usando os mecanismos padr&atilde;o do Firebase e HTTPS/TLS.</p>
+        <div class="legal-note">
+            O conte&uacute;do do widget e alguns dados de exibi&ccedil;&atilde;o podem permanecer em cache local no pr&oacute;prio dispositivo para funcionamento offline e atualiza&ccedil;&atilde;o r&aacute;pida da interface.
+        </div>
+
+        <h2>4. Compartilhamento de dados</h2>
+        <p>O WASUP n&atilde;o vende dados pessoais nem compartilha dados para publicidade comportamental.</p>
+        <p>Os dados necess&aacute;rios para operar o servi&ccedil;o podem ser processados por provedores de infraestrutura usados pelo app, como Firebase e Google Cloud, exclusivamente para viabilizar autentica&ccedil;&atilde;o, banco de dados, notifica&ccedil;&otilde;es e opera&ccedil;&atilde;o t&eacute;cnica do produto.</p>
+
+        <h2>5. Exclus&atilde;o de conta e dados</h2>
+        <p>O usu&aacute;rio pode solicitar a exclus&atilde;o da pr&oacute;pria conta pelo app. Quando isso acontece, o objetivo do fluxo &eacute; remover o perfil e desfazer o pareamento ativo associado ao usu&aacute;rio.</p>
+        <p>Se houver exig&ecirc;ncia adicional de exclus&atilde;o de dados ou esclarecimento sobre reten&ccedil;&atilde;o, use os canais de contato dispon&iacute;veis na listagem do app.</p>
+
+        <h2>6. Permiss&otilde;es e notifica&ccedil;&otilde;es</h2>
+        <p>O app pode solicitar permiss&atilde;o de notifica&ccedil;&atilde;o no Android para avisos relacionados a novas mensagens e atualiza&ccedil;&otilde;es relevantes do pareamento.</p>
+
+        <h2>7. Crian&ccedil;as</h2>
+        <p>O WASUP n&atilde;o foi projetado especificamente para crian&ccedil;as e n&atilde;o coleta intencionalmente dados pessoais de menores de idade.</p>
+
+        <h2>8. Altera&ccedil;&otilde;es nesta pol&iacute;tica</h2>
+        <p>Podemos atualizar esta pol&iacute;tica para refletir mudan&ccedil;as no produto, em requisitos legais ou em exig&ecirc;ncias da Google Play. A vers&atilde;o vigente ser&aacute; sempre a publicada nesta p&aacute;gina.</p>
+
+        <h2>9. Contato</h2>
+        <p>Se voc&ecirc; tiver d&uacute;vidas sobre privacidade, seguran&ccedil;a ou exclus&atilde;o de dados, utilize os canais de contato informados na p&aacute;gina p&uacute;blica do app ou na listagem correspondente.</p>
+    </main>
+
+    <footer class="footer">
+        <p style="margin-bottom: 16px;">
+            <a href="data-safety.html" style="color: var(--text-muted); text-decoration: underline;">Data Safety</a>
+        </p>
+        <p>&copy; 2026 WASUP. Todos os direitos reservados. <br><span style="font-size: 0.75rem; opacity: 0.4;">by Rafael Botossi</span></p>
+    </footer>
+</body>
+</html>
