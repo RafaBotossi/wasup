@@ -4,68 +4,340 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pol&iacute;tica de Privacidade - WASUP</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Pol&iacute;tica de Privacidade do WASUP com informa&ccedil;&otilde;es sobre coleta, uso, seguran&ccedil;a, reten&ccedil;&atilde;o e exclus&atilde;o de dados.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style>
-        .legal-container {
-            max-width: 860px;
-            margin: 56px auto;
-            padding: 40px;
-            background: rgba(25, 20, 24, 0.52);
-            backdrop-filter: blur(16px);
-            border-radius: 24px;
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            position: relative;
-            z-index: 10;
-        }
-        .legal-container h1,
-        .legal-container h2 {
-            color: var(--primary);
-            margin: 0 0 18px;
-        }
-        .legal-container h2 {
-            margin-top: 34px;
-        }
-        .legal-container p,
-        .legal-container li {
-            line-height: 1.7;
-            margin-bottom: 14px;
-            color: var(--text-muted);
-        }
-        .legal-container ul {
-            padding-left: 20px;
-        }
-        .legal-lead {
-            font-size: 1.02rem;
-            color: var(--text-main);
-        }
-        .back-link {
-            display: inline-block;
-            margin-bottom: 26px;
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-        }
-        .legal-note {
-            padding: 16px 18px;
-            border-radius: 16px;
-            background: rgba(255, 59, 59, 0.08);
-            border: 1px solid rgba(255, 59, 59, 0.14);
-            color: var(--text-main);
-        }
         body {
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
         }
+
+        .privacy-shell {
+            width: min(1180px, calc(100% - 48px));
+            margin: 0 auto;
+            padding: 40px 0 72px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .privacy-hero {
+            position: relative;
+            overflow: hidden;
+            padding: 40px;
+            margin-bottom: 28px;
+            background:
+                radial-gradient(circle at top right, rgba(255, 167, 38, 0.22), transparent 34%),
+                radial-gradient(circle at bottom left, rgba(255, 59, 59, 0.24), transparent 36%),
+                linear-gradient(140deg, rgba(18, 14, 20, 0.92), rgba(28, 18, 24, 0.8));
+        }
+
+        .privacy-hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+                linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+            background-size: 30px 30px;
+            mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.55), transparent 85%);
+            pointer-events: none;
+        }
+
+        .hero-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 28px;
+            color: #ffd2d2;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .hero-back:hover {
+            color: #ffffff;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.5fr) minmax(280px, 0.9fr);
+            gap: 28px;
+            align-items: end;
+            position: relative;
+            z-index: 1;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 16px;
+            border-radius: 999px;
+            margin-bottom: 18px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: #ffb8b8;
+            font-size: 0.84rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .privacy-hero h1 {
+            font-size: clamp(2.8rem, 4vw, 4.6rem);
+            line-height: 0.98;
+            margin-bottom: 18px;
+            max-width: 10ch;
+        }
+
+        .hero-intro {
+            max-width: 60ch;
+            color: rgba(255, 255, 255, 0.78);
+            font-size: 1.08rem;
+            line-height: 1.75;
+        }
+
+        .hero-panel {
+            padding: 24px;
+            border-radius: 26px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        }
+
+        .hero-panel p {
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .hero-panel p:last-child {
+            margin-bottom: 0;
+        }
+
+        .hero-panel strong {
+            display: block;
+            color: var(--text-main);
+            margin-bottom: 6px;
+            font-size: 1.05rem;
+        }
+
+        .privacy-layout {
+            display: grid;
+            grid-template-columns: minmax(240px, 280px) minmax(0, 1fr);
+            gap: 28px;
+            align-items: start;
+        }
+
+        .privacy-sidebar {
+            position: sticky;
+            top: 108px;
+            padding: 24px;
+        }
+
+        .privacy-sidebar h2 {
+            font-size: 1rem;
+            margin-bottom: 16px;
+        }
+
+        .privacy-sidebar ul {
+            list-style: none;
+            display: grid;
+            gap: 10px;
+        }
+
+        .privacy-sidebar a {
+            color: var(--text-muted);
+            text-decoration: none;
+            line-height: 1.45;
+            transition: color 0.2s ease, transform 0.2s ease;
+            display: inline-block;
+        }
+
+        .privacy-sidebar a:hover {
+            color: var(--text-main);
+            transform: translateX(4px);
+        }
+
+        .privacy-content {
+            display: grid;
+            gap: 22px;
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .summary-card,
+        .policy-card {
+            padding: 24px;
+        }
+
+        .summary-card {
+            min-height: 100%;
+            background:
+                linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.03)),
+                rgba(25, 20, 24, 0.42);
+        }
+
+        .summary-card span {
+            display: block;
+            font-size: 0.78rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: #ffb7b7;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .summary-card strong {
+            display: block;
+            font-size: 1.08rem;
+            margin-bottom: 10px;
+        }
+
+        .summary-card p {
+            color: var(--text-muted);
+            line-height: 1.65;
+        }
+
+        .policy-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .policy-card::before {
+            content: "";
+            position: absolute;
+            inset: 0 auto auto 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, rgba(255, 59, 59, 0.55), rgba(255, 167, 38, 0.2), transparent);
+        }
+
+        .policy-card h2 {
+            font-size: 1.75rem;
+            margin-bottom: 18px;
+        }
+
+        .policy-card p,
+        .policy-card li {
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+
+        .policy-card p + p {
+            margin-top: 14px;
+        }
+
+        .policy-card ul {
+            padding-left: 20px;
+            display: grid;
+            gap: 10px;
+        }
+
+        .policy-card li::marker {
+            color: var(--primary);
+        }
+
+        .section-meta {
+            display: inline-flex;
+            align-items: center;
+            margin-bottom: 14px;
+            padding: 6px 12px;
+            border-radius: 999px;
+            background: rgba(255, 59, 59, 0.1);
+            border: 1px solid rgba(255, 59, 59, 0.16);
+            color: #ffc2c2;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+        }
+
+        .highlight-box {
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, rgba(255, 59, 59, 0.12), rgba(255, 167, 38, 0.08));
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .highlight-box strong {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+
+        .contact-box {
+            display: grid;
+            gap: 10px;
+            margin-top: 18px;
+            padding: 20px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+        }
+
+        .contact-box a {
+            color: #ffd7a0;
+            text-decoration: none;
+        }
+
+        .contact-box a:hover {
+            color: #ffffff;
+        }
+
         .footer {
-            margin-top: auto;
+            margin-top: 12px;
+        }
+
+        @media (max-width: 1080px) {
+            .summary-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 900px) {
+            .privacy-shell {
+                width: min(100% - 28px, 900px);
+                padding-top: 24px;
+            }
+
+            .hero-grid,
+            .privacy-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .privacy-sidebar {
+                position: static;
+            }
+
+            .privacy-hero,
+            .privacy-sidebar,
+            .summary-card,
+            .policy-card {
+                padding: 22px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .summary-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .privacy-hero h1 {
+                max-width: none;
+            }
         }
     </style>
 </head>
 <body>
     <div class="blob blob-1"></div>
-    <div class="blob blob-2" style="bottom: 5%; right: 10%;"></div>
+    <div class="blob blob-2" style="bottom: 3%; right: 2%;"></div>
 
     <header class="header">
         <div class="logo">
@@ -73,69 +345,299 @@
         </div>
         <nav class="nav">
             <a href="index.html">In&iacute;cio</a>
-            <a href="data-safety.html">Data Safety</a>
+            <a href="privacy.html">Privacidade</a>
         </nav>
     </header>
 
-    <main class="legal-container glass-card">
-        <a href="index.html" class="back-link">&larr; Voltar para a p&aacute;gina inicial</a>
-        <h1>Pol&iacute;tica de Privacidade</h1>
-        <p><strong>&Uacute;ltima atualiza&ccedil;&atilde;o: 14 de abril de 2026</strong></p>
-        <p class="legal-lead">O WASUP foi criado para enviar recados curtos entre duas pessoas pareadas. Esta pol&iacute;tica explica quais dados s&atilde;o tratados, por que eles existem no app e como protegemos esse fluxo.</p>
+    <main class="privacy-shell">
+        <section class="privacy-hero glass-card">
+            <a href="index.html" class="hero-back">&larr; Voltar para a p&aacute;gina inicial</a>
+            <div class="hero-grid">
+                <div>
+                    <span class="eyebrow">Privacidade e Data Safety</span>
+                    <h1>Pol&iacute;tica de Privacidade do WASUP</h1>
+                    <p class="hero-intro">
+                        Esta p&aacute;gina resume de forma clara como o WASUP coleta, usa, protege, armazena e exclui dados pessoais e t&eacute;cnicos. O texto foi estruturado a partir do documento oficial do projeto e alinhado ao funcionamento atual do app.
+                    </p>
+                </div>
+                <aside class="hero-panel">
+                    <p><strong>&Uacute;ltima atualiza&ccedil;&atilde;o</strong>14/04/2026</p>
+                    <p><strong>Respons&aacute;vel</strong>Rafael Botossi</p>
+                    <p><strong>Contato</strong><a href="mailto:rafabotossi@gmail.com" style="color: #ffd7a0; text-decoration: none;">rafabotossi@gmail.com</a></p>
+                </aside>
+            </div>
+        </section>
 
-        <h2>1. Dados tratados pelo app</h2>
-        <p>Para o funcionamento do produto, o WASUP pode tratar os seguintes dados:</p>
-        <ul>
-            <li><strong>Identificador da conta Firebase:</strong> usado para autenticar o usu&aacute;rio no app e vincular seus dados t&eacute;cnicos.</li>
-            <li><strong>C&oacute;digo de pareamento:</strong> usado para localizar e conectar duas pessoas no app.</li>
-            <li><strong>Nome de exibi&ccedil;&atilde;o:</strong> definido pelo usu&aacute;rio para identifica&ccedil;&atilde;o visual dentro do pareamento.</li>
-            <li><strong>Chave p&uacute;blica de criptografia ponta a ponta:</strong> usada para que os dispositivos possam cifrar e decifrar mensagens entre si.</li>
-            <li><strong>Mensagens curtas e estado atual do par:</strong> o conte&uacute;do das mensagens e o &uacute;ltimo recado do par ficam armazenados em formato cifrado nos documentos do Firestore.</li>
-            <li><strong>Token do Firebase Cloud Messaging (FCM):</strong> usado para entregar notifica&ccedil;&otilde;es e acordar atualiza&ccedil;&otilde;es do widget.</li>
-            <li><strong>Dados locais no dispositivo:</strong> o app pode manter cache local do &uacute;ltimo estado exibido no widget e na interface para acelerar a experi&ecirc;ncia.</li>
-        </ul>
+        <div class="privacy-layout">
+            <aside class="privacy-sidebar glass-card">
+                <h2>Nesta p&aacute;gina</h2>
+                <ul>
+                    <li><a href="#resumo">Resumo r&aacute;pido</a></li>
+                    <li><a href="#quem-somos">1. Quem somos</a></li>
+                    <li><a href="#dados">2. Dados tratados</a></li>
+                    <li><a href="#uso">3. Uso dos dados</a></li>
+                    <li><a href="#armazenamento">4. Armazenamento</a></li>
+                    <li><a href="#seguranca">5. Seguran&ccedil;a e criptografia</a></li>
+                    <li><a href="#local">6. Dados locais no dispositivo</a></li>
+                    <li><a href="#widget">7. Widget</a></li>
+                    <li><a href="#compras">8. Compras e premium</a></li>
+                    <li><a href="#terceiros">9. Compartilhamento</a></li>
+                    <li><a href="#retencao">10. Reten&ccedil;&atilde;o</a></li>
+                    <li><a href="#exclusao">11. Exclus&atilde;o de conta</a></li>
+                    <li><a href="#acesso">12. Seguran&ccedil;a e acesso</a></li>
+                    <li><a href="#bases-legais">13. Bases legais</a></li>
+                    <li><a href="#permissoes">14. Permiss&otilde;es</a></li>
+                    <li><a href="#infantil">15. Privacidade infantil</a></li>
+                    <li><a href="#alteracoes">16. Altera&ccedil;&otilde;es</a></li>
+                    <li><a href="#contato">17. Contato</a></li>
+                </ul>
+            </aside>
 
-        <h2>2. Como usamos esses dados</h2>
-        <ul>
-            <li>Autenticar o usu&aacute;rio e manter sua conta funcional.</li>
-            <li>Permitir o pareamento entre duas pessoas.</li>
-            <li>Cifrar, enviar, receber e exibir mensagens curtas.</li>
-            <li>Atualizar o widget e as notifica&ccedil;&otilde;es do aparelho.</li>
-            <li>Manter recursos pagos, como o modo premium, quando aplic&aacute;vel.</li>
-            <li>Atender solicita&ccedil;&otilde;es de exclus&atilde;o de conta e manuten&ccedil;&atilde;o operacional do servi&ccedil;o.</li>
-        </ul>
+            <div class="privacy-content">
+                <section id="resumo" class="summary-grid">
+                    <article class="summary-card glass-card">
+                        <span>Coleta essencial</span>
+                        <strong>Apenas o necess&aacute;rio para conta, pareamento, mensagens e premium.</strong>
+                        <p>O app trata dados de autentica&ccedil;&atilde;o, identificadores t&eacute;cnicos, mensagens criptografadas, notifica&ccedil;&otilde;es e estado do widget.</p>
+                    </article>
+                    <article class="summary-card glass-card">
+                        <span>Seguran&ccedil;a</span>
+                        <strong>Mensagens e estado compartilhado usam criptografia ponta a ponta.</strong>
+                        <p>O fluxo atual usa ECDH, HKDF SHA-256 e AES/GCM, com chave privada protegida no AndroidKeyStore.</p>
+                    </article>
+                    <article class="summary-card glass-card">
+                        <span>Terceiros</span>
+                        <strong>Firebase e Google Play atuam como infraestrutura operacional.</strong>
+                        <p>O WASUP n&atilde;o vende dados pessoais e n&atilde;o armazena diretamente dados financeiros sens&iacute;veis.</p>
+                    </article>
+                    <article class="summary-card glass-card">
+                        <span>Controle do usu&aacute;rio</span>
+                        <strong>O app possui fluxo interno para exclus&atilde;o de conta e limpeza associada.</strong>
+                        <p>Quando acionado, o sistema busca remover conta, pareamento, cache local e registros operacionais vinculados.</p>
+                    </article>
+                </section>
 
-        <h2>3. Como protegemos as mensagens</h2>
-        <p>As mensagens do WASUP s&atilde;o protegidas com criptografia ponta a ponta entre os dispositivos pareados. Isso significa que o conte&uacute;do &eacute; cifrado no cliente antes de ser salvo no banco e decifrado localmente no aparelho autorizado.</p>
-        <p>A transmiss&atilde;o de dados entre app e infraestrutura tamb&eacute;m ocorre com criptografia em tr&acirc;nsito usando os mecanismos padr&atilde;o do Firebase e HTTPS/TLS.</p>
-        <div class="legal-note">
-            O conte&uacute;do do widget e alguns dados de exibi&ccedil;&atilde;o podem permanecer em cache local no pr&oacute;prio dispositivo para funcionamento offline e atualiza&ccedil;&atilde;o r&aacute;pida da interface.
+                <section id="quem-somos" class="policy-card glass-card">
+                    <span class="section-meta">1. Quem somos</span>
+                    <h2>Respons&aacute;vel pelo app</h2>
+                    <p>Desenvolvedor respons&aacute;vel: Rafael Botossi.</p>
+                    <p>E-mail para contato: <a href="mailto:rafabotossi@gmail.com" style="color: #ffd7a0; text-decoration: none;">rafabotossi@gmail.com</a>.</p>
+                </section>
+
+                <section id="dados" class="policy-card glass-card">
+                    <span class="section-meta">2. Quais dados o app coleta e trata</span>
+                    <h2>Dados necess&aacute;rios para o funcionamento do WASUP</h2>
+                    <p>O WASUP trata apenas os dados necess&aacute;rios para cria&ccedil;&atilde;o de conta, pareamento entre usu&aacute;rios, envio de mensagens curtas, exibi&ccedil;&atilde;o de estado no app e widget, e libera&ccedil;&atilde;o de recursos premium.</p>
+                    <ul>
+                        <li>E-mail e senha para cria&ccedil;&atilde;o da conta, login e recupera&ccedil;&atilde;o de acesso via Firebase Authentication.</li>
+                        <li>Identificador t&eacute;cnico da conta gerado pelo Firebase Authentication.</li>
+                        <li>Nome exibido configurado pelo pr&oacute;prio usu&aacute;rio dentro do app.</li>
+                        <li>C&oacute;digo de pareamento para conectar duas pessoas no app.</li>
+                        <li>Identificadores de pareamento, como <code>pairId</code>, <code>pairedUserId</code>, c&oacute;digos dos membros e solicita&ccedil;&otilde;es de pareamento.</li>
+                        <li>Chave p&uacute;blica de criptografia ponta a ponta.</li>
+                        <li>Token do Firebase Cloud Messaging para notifica&ccedil;&otilde;es e atualiza&ccedil;&atilde;o do widget.</li>
+                        <li>Conte&uacute;do de mensagens e &uacute;ltimo estado exibido entre o par, armazenados remotamente em formato criptografado.</li>
+                        <li>Dados locais do widget, como nome do par, &uacute;ltima mensagem, remetente e data da &uacute;ltima atualiza&ccedil;&atilde;o.</li>
+                        <li>Status premium por meio do indicador t&eacute;cnico <code>isPremiumUser</code>.</li>
+                        <li>Dados t&eacute;cnicos de compra consultados junto ao Google Play para confirmar aquisi&ccedil;&otilde;es premium.</li>
+                    </ul>
+                </section>
+
+                <section id="uso" class="policy-card glass-card">
+                    <span class="section-meta">3. Como os dados s&atilde;o usados</span>
+                    <h2>Finalidades do tratamento</h2>
+                    <ul>
+                        <li>Autenticar o usu&aacute;rio e manter a sess&atilde;o ativa.</li>
+                        <li>Permitir recupera&ccedil;&atilde;o de acesso por e-mail.</li>
+                        <li>Gerar e manter o perfil do usu&aacute;rio no app.</li>
+                        <li>Permitir envio, recebimento e exibi&ccedil;&atilde;o de mensagens curtas entre pessoas pareadas.</li>
+                        <li>Viabilizar pedidos de pareamento e manuten&ccedil;&atilde;o do v&iacute;nculo entre usu&aacute;rios.</li>
+                        <li>Enviar notifica&ccedil;&otilde;es push e atualizar o widget da tela principal.</li>
+                        <li>Mostrar conte&uacute;do recente no widget quando o usu&aacute;rio optar por adicion&aacute;-lo.</li>
+                        <li>Identificar e habilitar recursos premium adquiridos pelo Google Play Billing.</li>
+                        <li>Manter a opera&ccedil;&atilde;o t&eacute;cnica e a seguran&ccedil;a do servi&ccedil;o.</li>
+                    </ul>
+                </section>
+
+                <section id="armazenamento" class="policy-card glass-card">
+                    <span class="section-meta">4. Como os dados s&atilde;o armazenados</span>
+                    <h2>Infraestrutura utilizada pelo app</h2>
+                    <ul>
+                        <li>Firebase Authentication para login por e-mail e senha.</li>
+                        <li>Cloud Firestore para perfil, pareamento, pedidos de conex&atilde;o, estado atual e mensagens.</li>
+                        <li>Firebase Cloud Messaging para notifica&ccedil;&otilde;es.</li>
+                        <li>Android DataStore local para cache do widget.</li>
+                        <li>Google Play Billing para consulta, processamento e confirma&ccedil;&atilde;o de compras.</li>
+                        <li>Componentes do Android e do Google Play necess&aacute;rios para disponibiliza&ccedil;&atilde;o e funcionamento do app.</li>
+                    </ul>
+                    <div class="highlight-box">
+                        <strong>Configura&ccedil;&atilde;o adicional de seguran&ccedil;a</strong>
+                        <p>O aplicativo foi configurado com <code>usesCleartextTraffic=false</code>, n&atilde;o foi projetado para trafegar dados em HTTP inseguro, e tamb&eacute;m possui <code>allowBackup=false</code> com extra&ccedil;&atilde;o de dados desabilitada no manifesto atual.</p>
+                    </div>
+                </section>
+
+                <section id="seguranca" class="policy-card glass-card">
+                    <span class="section-meta">5. Como os dados s&atilde;o protegidos</span>
+                    <h2>Criptografia e prote&ccedil;&atilde;o t&eacute;cnica</h2>
+                    <p>O WASUP usa criptografia ponta a ponta para proteger o conte&uacute;do principal trocado entre usu&aacute;rios pareados.</p>
+                    <ul>
+                        <li>Cada dispositivo gera e mant&eacute;m sua pr&oacute;pria chave criptogr&aacute;fica no AndroidKeyStore.</li>
+                        <li>A troca de segredo usa ECDH na curva <code>secp256r1</code>.</li>
+                        <li>A deriva&ccedil;&atilde;o de chave usa HKDF com SHA-256.</li>
+                        <li>A cifragem do conte&uacute;do usa <code>AES/GCM/NoPadding</code> com chave de 256 bits.</li>
+                        <li>O app armazena remotamente o conte&uacute;do cifrado e o vetor IV correspondente.</li>
+                        <li>A chave privada permanece no dispositivo, protegida pelo AndroidKeyStore.</li>
+                    </ul>
+                    <div class="highlight-box">
+                        <strong>Em termos pr&aacute;ticos</strong>
+                        <p>As mensagens e o estado compartilhado s&atilde;o tratados em formato criptografado antes de serem salvos remotamente.</p>
+                    </div>
+                </section>
+
+                <section id="local" class="policy-card glass-card">
+                    <span class="section-meta">6. Dados armazenados localmente</span>
+                    <h2>Cache local no dispositivo</h2>
+                    <p>Para melhorar a experi&ecirc;ncia do usu&aacute;rio e permitir exibi&ccedil;&atilde;o r&aacute;pida do widget, o app pode manter localmente:</p>
+                    <ul>
+                        <li>Identificador do pareamento.</li>
+                        <li>Nome exibido do par.</li>
+                        <li>&Uacute;ltima mensagem exibida.</li>
+                        <li>Identificador e c&oacute;digo do &uacute;ltimo remetente.</li>
+                        <li>Hor&aacute;rio da &uacute;ltima atualiza&ccedil;&atilde;o.</li>
+                    </ul>
+                    <p>Quando o usu&aacute;rio encerra sess&atilde;o ou usa a op&ccedil;&atilde;o de excluir conta, o app limpa esse cache local do widget.</p>
+                </section>
+
+                <section id="widget" class="policy-card glass-card">
+                    <span class="section-meta">7. Widget na tela principal</span>
+                    <h2>Uso opcional do widget</h2>
+                    <p>O app possui um bot&atilde;o para solicitar ao sistema Android a adi&ccedil;&atilde;o do widget na tela principal. Se o usu&aacute;rio optar por esse recurso, parte do estado recente do relacionamento ou da mensagem pode ser mantida localmente no aparelho para exibi&ccedil;&atilde;o r&aacute;pida.</p>
+                    <p>Esse recurso depende de confirma&ccedil;&atilde;o do pr&oacute;prio usu&aacute;rio na interface do sistema Android.</p>
+                </section>
+
+                <section id="compras" class="policy-card glass-card">
+                    <span class="section-meta">8. Compras, Google Play Billing e premium</span>
+                    <h2>Recursos pagos e confirma&ccedil;&atilde;o de compra</h2>
+                    <p>O WASUP possui integra&ccedil;&atilde;o com Google Play Billing para produtos premium. Quando o usu&aacute;rio inicia uma compra:</p>
+                    <ul>
+                        <li>O fluxo de pagamento ocorre pelo ecossistema do Google Play.</li>
+                        <li>O app consulta detalhes do produto e compras existentes pela API de billing.</li>
+                        <li>O app pode receber e usar o token ou estado t&eacute;cnico da compra para confirmar a aquisi&ccedil;&atilde;o.</li>
+                        <li>Uma vez confirmada a compra, o sistema pode marcar o usu&aacute;rio como premium por meio do campo t&eacute;cnico <code>isPremiumUser</code>.</li>
+                    </ul>
+                    <p>Dados financeiros sens&iacute;veis, como n&uacute;mero de cart&atilde;o e forma completa de pagamento, n&atilde;o s&atilde;o armazenados diretamente pelo app.</p>
+                    <p>O projeto tamb&eacute;m possui um endpoint de webhook em infraestrutura Firebase para apoio a confirma&ccedil;&otilde;es de pagamento e atualiza&ccedil;&atilde;o do status premium quando aplic&aacute;vel.</p>
+                </section>
+
+                <section id="terceiros" class="policy-card glass-card">
+                    <span class="section-meta">9. Compartilhamento de dados com terceiros</span>
+                    <h2>Compartilhamento limitado &agrave; opera&ccedil;&atilde;o do servi&ccedil;o</h2>
+                    <p>O app n&atilde;o vende dados pessoais.</p>
+                    <p>Os dados podem ser tratados por terceiros que atuam como operadores ou processadores, estritamente na medida necess&aacute;ria para viabilizar a opera&ccedil;&atilde;o t&eacute;cnica do servi&ccedil;o, incluindo:</p>
+                    <ul>
+                        <li>Google Firebase Authentication.</li>
+                        <li>Cloud Firestore.</li>
+                        <li>Firebase Cloud Messaging.</li>
+                        <li>Google Play Billing e Google Play.</li>
+                        <li>Infraestrutura Google e Google Cloud relacionada ao funcionamento desses servi&ccedil;os.</li>
+                    </ul>
+                </section>
+
+                <section id="retencao" class="policy-card glass-card">
+                    <span class="section-meta">10. Reten&ccedil;&atilde;o dos dados</span>
+                    <h2>Por quanto tempo os dados podem permanecer</h2>
+                    <p>Os dados s&atilde;o mantidos enquanto forem necess&aacute;rios para opera&ccedil;&atilde;o da conta e do servi&ccedil;o, ou at&eacute; a exclus&atilde;o da conta pelo usu&aacute;rio, observado o comportamento t&eacute;cnico atual do app.</p>
+                    <ul>
+                        <li>O perfil do usu&aacute;rio pode ser removido do Firestore.</li>
+                        <li>A conta autenticada pode ser removida do Firebase Authentication.</li>
+                        <li>O pareamento ativo pode ser desativado e removido.</li>
+                        <li>O cache local do widget pode ser apagado.</li>
+                        <li>Pedidos de pareamento podem ser removidos.</li>
+                        <li>C&oacute;digos de pareamento vinculados ao usu&aacute;rio podem ser removidos.</li>
+                        <li>O estado compartilhado do par e o hist&oacute;rico remoto de mensagens podem ser removidos.</li>
+                        <li>O v&iacute;nculo de pareamento do outro membro remanescente pode ser limpo automaticamente.</li>
+                    </ul>
+                    <p>Quando a exclus&atilde;o do documento principal do usu&aacute;rio ocorre, uma rotina de backend executa a limpeza complementar dos registros relacionados no Firestore para reduzir a perman&ecirc;ncia de dados residuais operacionais.</p>
+                </section>
+
+                <section id="exclusao" class="policy-card glass-card">
+                    <span class="section-meta">11. Exclus&atilde;o de conta e apagamento</span>
+                    <h2>Fluxo de exclus&atilde;o dentro do app</h2>
+                    <p>O app possui um bot&atilde;o interno de "Excluir conta". Quando o usu&aacute;rio usa esse recurso, o fluxo atual busca:</p>
+                    <ul>
+                        <li>Desativar o pareamento ativo, quando existir.</li>
+                        <li>Excluir o documento principal do usu&aacute;rio no Firestore.</li>
+                        <li>Acionar limpeza complementar no backend para remover c&oacute;digo de pareamento, pedidos pendentes, mensagens, estado do par e documentos associados.</li>
+                        <li>Limpar o v&iacute;nculo de pareamento do outro usu&aacute;rio remanescente, quando aplic&aacute;vel.</li>
+                        <li>Excluir a conta autenticada no Firebase Authentication.</li>
+                        <li>Encerrar a sess&atilde;o.</li>
+                        <li>Apagar o cache local do widget e atualizar o widget para limpar a exibi&ccedil;&atilde;o.</li>
+                    </ul>
+                    <div class="highlight-box">
+                        <strong>Importante</strong>
+                        <p>Esse processo &eacute; irrevers&iacute;vel do ponto de vista da conta do usu&aacute;rio e foi projetado para apagar a conta e os principais registros associados ao uso do app.</p>
+                    </div>
+                </section>
+
+                <section id="acesso" class="policy-card glass-card">
+                    <span class="section-meta">12. Seguran&ccedil;a e acesso</span>
+                    <h2>Restri&ccedil;&otilde;es de leitura e escrita</h2>
+                    <p>As regras do Firestore foram configuradas para restringir leitura e escrita, exigindo autentica&ccedil;&atilde;o e valida&ccedil;&otilde;es espec&iacute;ficas para perfis, pareamentos, pedidos de conex&atilde;o e conte&uacute;do criptografado.</p>
+                    <p>O campo de status premium tamb&eacute;m possui prote&ccedil;&atilde;o por regras para evitar altera&ccedil;&atilde;o direta indevida pelo cliente.</p>
+                </section>
+
+                <section id="bases-legais" class="policy-card glass-card">
+                    <span class="section-meta">13. Bases legais para tratamento</span>
+                    <h2>LGPD e fundamentos aplic&aacute;veis</h2>
+                    <p>Quando aplic&aacute;vel, o tratamento de dados pessoais no WASUP pode se fundamentar nas seguintes bases legais da LGPD:</p>
+                    <ul>
+                        <li>Execu&ccedil;&atilde;o de contrato ou de procedimentos preliminares relacionados ao uso do aplicativo.</li>
+                        <li>Consentimento do usu&aacute;rio, quando necess&aacute;rio para recursos espec&iacute;ficos do dispositivo ou opera&ccedil;&otilde;es que dependam de manifesta&ccedil;&atilde;o livre, informada e inequ&iacute;voca do titular.</li>
+                        <li>Cumprimento de obriga&ccedil;&otilde;es legais ou regulat&oacute;rias, quando aplic&aacute;vel.</li>
+                        <li>Exerc&iacute;cio regular de direitos, prote&ccedil;&atilde;o da seguran&ccedil;a e preven&ccedil;&atilde;o a fraudes, quando necess&aacute;rio para proteger o servi&ccedil;o, os usu&aacute;rios e a integridade da plataforma.</li>
+                    </ul>
+                </section>
+
+                <section id="permissoes" class="policy-card glass-card">
+                    <span class="section-meta">14. Permiss&otilde;es e recursos do dispositivo</span>
+                    <h2>O que o app usa no aparelho</h2>
+                    <p>Pelo funcionamento atual, o app usa:</p>
+                    <ul>
+                        <li>Internet, para autentica&ccedil;&atilde;o, banco de dados, notifica&ccedil;&otilde;es e recursos online.</li>
+                        <li>Notifica&ccedil;&otilde;es, quando dispon&iacute;vel no Android, para avisos e atualiza&ccedil;&otilde;es do app.</li>
+                        <li>Widget de tela principal, somente quando o usu&aacute;rio opta por adicion&aacute;-lo.</li>
+                    </ul>
+                    <p>O c&oacute;digo atual analisado n&atilde;o indica coleta de localiza&ccedil;&atilde;o, contatos, fotos, &aacute;udio, arquivos pessoais, microfone, c&acirc;mera, an&uacute;ncios personalizados ou SDK pr&oacute;prio de analytics.</p>
+                </section>
+
+                <section id="infantil" class="policy-card glass-card">
+                    <span class="section-meta">15. Privacidade infantil</span>
+                    <h2>Uso por menores</h2>
+                    <p>O app n&atilde;o &eacute; destinado a menores de 13 anos. O c&oacute;digo atual n&atilde;o apresenta recursos voltados especificamente para crian&ccedil;as nem fluxo dedicado para tratamento de dados infantis.</p>
+                </section>
+
+                <section id="alteracoes" class="policy-card glass-card">
+                    <span class="section-meta">16. Altera&ccedil;&otilde;es desta pol&iacute;tica</span>
+                    <h2>Atualiza&ccedil;&otilde;es futuras</h2>
+                    <p>Esta pol&iacute;tica pode ser atualizada para refletir mudan&ccedil;as no aplicativo, em integra&ccedil;&otilde;es com o Google Play, em fluxos de exclus&atilde;o, em mecanismos de pagamento, em seguran&ccedil;a ou em obriga&ccedil;&otilde;es legais e regulat&oacute;rias.</p>
+                </section>
+
+                <section id="contato" class="policy-card glass-card">
+                    <span class="section-meta">17. Contato</span>
+                    <h2>Fale com o respons&aacute;vel</h2>
+                    <p>Para d&uacute;vidas sobre privacidade, seguran&ccedil;a, compras, exclus&atilde;o de dados ou exerc&iacute;cio de direitos relacionados aos seus dados, entre em contato:</p>
+                    <div class="contact-box">
+                        <strong>Rafael Botossi</strong>
+                        <a href="mailto:rafabotossi@gmail.com">rafabotossi@gmail.com</a>
+                    </div>
+                </section>
+            </div>
         </div>
-
-        <h2>4. Compartilhamento de dados</h2>
-        <p>O WASUP n&atilde;o vende dados pessoais nem compartilha dados para publicidade comportamental.</p>
-        <p>Os dados necess&aacute;rios para operar o servi&ccedil;o podem ser processados por provedores de infraestrutura usados pelo app, como Firebase e Google Cloud, exclusivamente para viabilizar autentica&ccedil;&atilde;o, banco de dados, notifica&ccedil;&otilde;es e opera&ccedil;&atilde;o t&eacute;cnica do produto.</p>
-
-        <h2>5. Exclus&atilde;o de conta e dados</h2>
-        <p>O usu&aacute;rio pode solicitar a exclus&atilde;o da pr&oacute;pria conta pelo app. Quando isso acontece, o objetivo do fluxo &eacute; remover o perfil e desfazer o pareamento ativo associado ao usu&aacute;rio.</p>
-        <p>Se houver exig&ecirc;ncia adicional de exclus&atilde;o de dados ou esclarecimento sobre reten&ccedil;&atilde;o, use os canais de contato dispon&iacute;veis na listagem do app.</p>
-
-        <h2>6. Permiss&otilde;es e notifica&ccedil;&otilde;es</h2>
-        <p>O app pode solicitar permiss&atilde;o de notifica&ccedil;&atilde;o no Android para avisos relacionados a novas mensagens e atualiza&ccedil;&otilde;es relevantes do pareamento.</p>
-
-        <h2>7. Crian&ccedil;as</h2>
-        <p>O WASUP n&atilde;o foi projetado especificamente para crian&ccedil;as e n&atilde;o coleta intencionalmente dados pessoais de menores de idade.</p>
-
-        <h2>8. Altera&ccedil;&otilde;es nesta pol&iacute;tica</h2>
-        <p>Podemos atualizar esta pol&iacute;tica para refletir mudan&ccedil;as no produto, em requisitos legais ou em exig&ecirc;ncias da Google Play. A vers&atilde;o vigente ser&aacute; sempre a publicada nesta p&aacute;gina.</p>
-
-        <h2>9. Contato</h2>
-        <p>Se voc&ecirc; tiver d&uacute;vidas sobre privacidade, seguran&ccedil;a ou exclus&atilde;o de dados, utilize os canais de contato informados na p&aacute;gina p&uacute;blica do app ou na listagem correspondente.</p>
     </main>
 
     <footer class="footer">
         <p style="margin-bottom: 16px;">
-            <a href="data-safety.html" style="color: var(--text-muted); text-decoration: underline;">Data Safety</a>
+            <a href="privacy.html" style="color: var(--text-muted); text-decoration: underline;">Pol&iacute;tica de Privacidade</a>
         </p>
         <p>&copy; 2026 WASUP. Todos os direitos reservados. <br><span style="font-size: 0.75rem; opacity: 0.4;">by Rafael Botossi</span></p>
     </footer>
