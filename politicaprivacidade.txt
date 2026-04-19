@@ -1,0 +1,196 @@
+POLITICA DE PRIVACIDADE E DATA SAFETY - WASUP
+
+Ultima atualizacao: 19/04/2026
+
+Esta Politica de Privacidade e Data Safety descreve como o aplicativo WASUP coleta, usa, armazena, protege e exclui dados pessoais e tecnicos. Este texto foi elaborado com base no funcionamento atual do aplicativo, incluindo autenticacao com Firebase, armazenamento em Firestore, notificacoes com Firebase Cloud Messaging (FCM), recurso de widget para a tela principal do Android e integracao com Google Play Billing para recursos premium.
+
+1. Quem somos
+
+Desenvolvedor responsavel:
+Nome completo: Rafael Botossi
+E-mail: rafabotossi@gmail.com
+
+2. Quais dados o app coleta e trata
+
+O WASUP trata apenas os dados necessarios para criacao da conta, pareamento entre usuarios, envio de mensagens curtas, exibicao do estado atual no app/widget e liberacao de recursos premium.
+
+Os dados tratados podem incluir:
+
+- E-mail e senha: usados para criacao da conta, login e recuperacao de acesso por meio do Firebase Authentication.
+- Identificador da conta: identificador tecnico do usuario gerado pelo Firebase Authentication.
+- Nome exibido: nome configurado pelo proprio usuario dentro do app.
+- Codigo de pareamento: codigo gerado para conectar duas pessoas no app.
+- Identificadores de pareamento: como `pairId`, `pairedUserId`, codigos dos membros e solicitacoes de pareamento.
+- Chave publica de criptografia ponta a ponta: usada para proteger o conteudo das mensagens e do estado compartilhado.
+- Token do Firebase Cloud Messaging (FCM): identificador tecnico do dispositivo/app usado para envio de notificacoes push ao aparelho vinculado a conta e para apoio a atualizacao do widget.
+- Conteudo de mensagens e ultimo estado exibido entre o par: armazenados remotamente em formato criptografado.
+- Dados locais do widget: cache local com informacoes como nome do par, ultima mensagem, remetente e data da ultima atualizacao, para exibicao rapida no widget.
+- Status premium: indicador tecnico `isPremiumUser`, usado para liberar recursos pagos quando a compra for confirmada.
+- Dados tecnicos de compra: o app consulta a Google Play para verificar compras do produto premium e confirmar a aquisicao no fluxo de billing. Esse fluxo pode envolver `productId`, `purchaseToken`, hash tecnico do token de compra, identificador de pedido (`orderId`), estado da compra, estado de acknowledgement, carimbo de verificacao e outros metadados tecnicos retornados pela Google Play Developer API. O app nao armazena dados de cartao ou pagamento diretamente.
+
+3. Como os dados sao usados
+
+Os dados sao usados para:
+
+- autenticar o usuario e manter a sessao;
+- permitir recuperacao de acesso por e-mail;
+- gerar e manter o perfil do usuario no app;
+- permitir o envio, recebimento e exibicao de mensagens curtas entre pessoas pareadas;
+- viabilizar pedidos de pareamento e manutencao do vinculo entre usuarios;
+- enviar notificacoes push sobre novas mensagens, sincronizar atualizacoes do estado do par e atualizar o widget da tela principal;
+- mostrar o conteudo recente no widget quando o usuario optar por adiciona-lo na tela principal;
+- identificar e habilitar recursos premium adquiridos pelo Google Play Billing;
+- validar compras premium com apoio de backend autenticado e da Google Play Developer API;
+- manter a operacao tecnica e a seguranca do servico.
+
+4. Como os dados sao armazenados
+
+O app utiliza principalmente os seguintes componentes e servicos:
+
+- Firebase Authentication para login por e-mail e senha;
+- Cloud Firestore para armazenar perfil, pareamento, pedidos de conexao, estado atual e mensagens;
+- Firebase Cloud Messaging (FCM) para notificacoes push e entrega de eventos tecnicos de mensagens;
+- Android DataStore local para cache do widget no aparelho;
+- Google Play Billing para consulta, processamento e confirmacao de compras dentro do ecossistema Google Play;
+- Firebase Cloud Functions para validacao autenticada de compras premium e atualizacao segura do status premium no Firestore;
+- Google Play Developer API para validacao de compras premium pelo backend;
+- componentes do Android e do Google Play necessarios para disponibilizacao do produto na Google Play e para funcionamento do app em dispositivos compativeis.
+
+O aplicativo foi configurado com `usesCleartextTraffic=false`, ou seja, nao foi projetado para trafegar dados em texto puro por HTTP inseguro. Alem disso, `allowBackup=false` e as regras de extracao de dados estao desabilitadas no manifesto atual, reduzindo copia automatica de dados do app por mecanismos de backup do sistema.
+
+Para o fluxo de notificacoes, o app pode armazenar o token FCM no perfil do usuario e uma rotina de backend pode usar esse token para enviar um aviso de nova mensagem ao outro membro do par. O conteudo principal da mensagem permanece protegido pelo fluxo de criptografia ponta a ponta descrito abaixo.
+
+5. Como os dados sao protegidos e qual criptografia e usada
+
+O WASUP usa criptografia ponta a ponta para proteger o conteudo principal trocado entre os usuarios pareados.
+
+Pelo funcionamento atual do codigo:
+
+- cada dispositivo gera e mantem sua propria chave criptografica no AndroidKeyStore;
+- a troca de segredo usa ECDH (Elliptic Curve Diffie-Hellman) na curva `secp256r1`;
+- a derivacao de chave usa HKDF com SHA-256;
+- a cifragem do conteudo usa `AES/GCM/NoPadding` com chave de 256 bits;
+- o app armazena remotamente o conteudo cifrado e o vetor IV correspondente;
+- a chave privada permanece no dispositivo, protegida pelo AndroidKeyStore.
+
+Isso significa que o conteudo principal das mensagens e do estado compartilhado entre o par e tratado em formato criptografado antes de ser salvo remotamente.
+
+6. Dados armazenados localmente no dispositivo
+
+Para melhorar a experiencia do usuario e permitir a exibicao rapida do widget, o app pode manter no proprio aparelho um cache local com:
+
+- identificador do pareamento;
+- nome exibido do par;
+- ultima mensagem exibida;
+- identificador e codigo do ultimo remetente;
+- horario da ultima atualizacao.
+
+Esse cache local e usado para o widget e para atualizacao visual mais rapida. Quando o usuario encerra sessao ou usa a opcao de excluir conta, o app limpa esse cache local do widget.
+
+7. Widget na tela principal
+
+O app possui um botao para solicitar ao sistema Android a adicao do widget na tela principal. Se o usuario optar por usar esse recurso, parte do estado recente do relacionamento/mensagem pode ser mantida localmente no aparelho para exibicao do widget. Esse recurso depende de confirmacao do proprio usuario na interface do sistema Android.
+
+8. Compras, Google Play Billing, backend de validacao e recursos premium
+
+O WASUP possui integracao com Google Play Billing para produtos premium. Quando o usuario inicia uma compra:
+
+- o fluxo de pagamento ocorre pelo ecossistema do Google Play;
+- o app consulta detalhes do produto e compras existentes pela API de billing;
+- o app pode receber e usar o token/estado tecnico da compra para iniciar a validacao da aquisicao;
+- o app envia ao backend autenticado apenas os identificadores tecnicos necessarios para validacao da compra, como `productId` e `purchaseToken`;
+- o backend consulta a Google Play Developer API para verificar se a compra existe, se pertence ao produto premium esperado e se esta concluida;
+- uma vez confirmada a compra, o backend pode marcar o usuario como premium por meio do campo tecnico `isPremiumUser`;
+- o backend tambem pode registrar metadados tecnicos da verificacao da compra, incluindo hash do token de compra, `orderId`, horario da verificacao e estado tecnico retornado pela Google Play.
+
+Os dados financeiros sensiveis, como numero de cartao e forma completa de pagamento, nao sao armazenados diretamente pelo app. Essas informacoes sao tratadas pelo Google Play conforme as politicas do proprio Google.
+
+O projeto tambem possui infraestrutura de backend em Firebase/Google Cloud para validacao autenticada de compras e atualizacao do status premium quando aplicavel.
+
+9. Compartilhamento de dados com terceiros
+
+O app nao vende dados pessoais.
+
+Os dados podem ser tratados por terceiros que atuam como operadores/processadores de dados em nome do produto, estritamente na medida necessaria para viabilizar a operacao tecnica do servico, incluindo:
+
+- Google Firebase Authentication;
+- Cloud Firestore;
+- Firebase Cloud Messaging;
+- Google Play Billing / Google Play;
+- Firebase Cloud Functions;
+- Google Play Developer API;
+- infraestrutura Google/Google Cloud relacionada ao funcionamento desses servicos.
+
+Esse compartilhamento ocorre apenas para finalidades operacionais, de autenticacao, banco de dados, notificacoes, compra in-app, processamento tecnico e funcionamento do aplicativo.
+
+10. Retencao dos dados
+
+Os dados sao mantidos enquanto forem necessarios para operacao da conta e do servico, ou ate a exclusao da conta pelo usuario, observado o comportamento tecnico atual do app.
+
+No estado atual do sistema:
+
+- o perfil do usuario pode ser removido do Firestore;
+- a conta autenticada pode ser removida do Firebase Authentication;
+- o pareamento ativo pode ser desativado e removido;
+- o cache local do widget pode ser apagado;
+- pedidos de pareamento podem ser removidos;
+- os codigos de pareamento vinculados ao usuario podem ser removidos;
+- o estado compartilhado do par e o historico remoto de mensagens do par podem ser removidos;
+- os registros tecnicos de validacao de compra premium vinculados a conta podem permanecer pelo periodo necessario para seguranca, prevencao a fraude, auditoria tecnica, cumprimento de obrigacoes legais ou defesa do servico;
+- o vinculo de pareamento do outro membro remanescente pode ser limpo automaticamente.
+
+Quando a exclusao do documento principal do usuario ocorre, uma rotina de backend executa a limpeza complementar dos registros relacionados no Firestore para reduzir a permanencia de dados residuais operacionais.
+
+11. Exclusao de conta e apagamento de dados
+
+O app possui um botao interno de "Excluir conta". Quando o usuario usa esse recurso, o fluxo atual do aplicativo busca:
+
+- desativar o pareamento ativo, quando existir;
+- excluir o documento principal do usuario no Firestore;
+- acionar a limpeza complementar no backend para remover codigo de pareamento, pedidos pendentes, mensagens, estado do par e documentos associados;
+- limpar o vinculo de pareamento do outro usuario remanescente, quando aplicavel;
+- excluir a conta autenticada no Firebase Authentication;
+- encerrar a sessao;
+- apagar o cache local do widget e atualizar o widget para limpar a exibicao.
+
+Esse processo e irreversivel do ponto de vista da conta do usuario e foi projetado para apagar a conta e os principais registros associados ao uso do app.
+
+12. Seguranca, acesso e anti-fraude
+
+As regras do Firestore foram configuradas para restringir leitura e escrita, exigindo autenticacao e validacoes especificas para perfis, pareamentos, pedidos de conexao e conteudo criptografado. O campo de status premium tambem possui protecao por regras para evitar alteracao direta indevida pelo cliente.
+
+No fluxo atual, a liberacao do premium depende de validacao no backend autenticado. O app nao deve conseguir definir diretamente `isPremiumUser` no Firestore por conta propria. O backend tambem pode usar tecnicas de vinculacao tecnica da compra a conta autenticada e registrar hash do token de compra para ajudar na prevencao de fraude, reuso indevido ou associacao incorreta da compra a outra conta.
+
+13. Bases legais para tratamento de dados
+
+Quando aplicavel, o tratamento de dados pessoais no WASUP pode se fundamentar nas seguintes bases legais da LGPD:
+
+- execucao de contrato ou de procedimentos preliminares relacionados ao uso do aplicativo, como criacao de conta, autenticacao, pareamento, troca de mensagens, suporte a recursos premium e manutencao da sessao;
+- consentimento do usuario, quando necessario para recursos especificos do dispositivo ou para operacoes que dependam de manifestacao livre, informada e inequívoca do titular;
+- cumprimento de obrigacoes legais ou regulatorias, quando aplicavel;
+- exercicio regular de direitos e protecao da seguranca e prevencao a fraudes, quando necessario para proteger o servico, os usuarios e a integridade da plataforma.
+
+14. Permissoes e recursos do dispositivo
+
+Pelo funcionamento atual, o app usa:
+
+- internet, para autenticacao, banco de dados, notificacoes e recursos online;
+- notificacoes, incluindo a permissao de notificacao do Android quando exigida pelo sistema, para avisos de novas mensagens e atualizacoes do app;
+- widget de tela principal, somente quando o usuario opta por adiciona-lo.
+
+O app nao indica, no codigo atual analisado, coleta de localizacao, contatos, fotos, audio, arquivos pessoais, microfone, camera, anuncios personalizados ou SDK proprio de analytics.
+
+15. Privacidade infantil
+
+O app nao e destinado a menores de 13 anos. O codigo atual nao apresenta recursos voltados especificamente para criancas nem fluxo dedicado para tratamento de dados infantis.
+
+16. Alteracoes desta politica
+
+Esta politica pode ser atualizada para refletir mudancas no aplicativo, em integracoes com o Google Play, em fluxos de exclusao, em mecanismos de pagamento, em seguranca ou em obrigacoes legais e regulatorias.
+
+17. Contato
+
+Para duvidas sobre privacidade, seguranca, compras, exclusao de dados ou exercicio de direitos relacionados aos seus dados, entre em contato:
+
+Rafael Botossi
+rafabotossi@gmail.com

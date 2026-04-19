@@ -357,13 +357,14 @@
                     <span class="eyebrow">Privacidade e Data Safety</span>
                     <h1>Pol&iacute;tica de Privacidade do WASUP</h1>
                     <p class="hero-intro">
-                        Esta p&aacute;gina resume de forma clara como o WASUP coleta, usa, protege, armazena e exclui dados pessoais e t&eacute;cnicos. O texto foi estruturado a partir do documento oficial do projeto e alinhado ao funcionamento atual do app.
+                        Esta p&aacute;gina descreve como o WASUP coleta, usa, armazena, protege e exclui dados pessoais e t&eacute;cnicos. O texto foi atualizado com base no funcionamento atual do aplicativo, incluindo autentica&ccedil;&atilde;o com Firebase, Firestore, notificações com FCM, widget Android, valida&ccedil;&atilde;o de compras premium em backend e distribui&ccedil;&atilde;o pela Google Play Store.
                     </p>
                 </div>
                 <aside class="hero-panel">
-                    <p><strong>&Uacute;ltima atualiza&ccedil;&atilde;o</strong>14/04/2026</p>
+                    <p><strong>&Uacute;ltima atualiza&ccedil;&atilde;o</strong>19/04/2026</p>
                     <p><strong>Respons&aacute;vel</strong>Rafael Botossi</p>
                     <p><strong>Contato</strong><a href="mailto:rafabotossi@gmail.com" style="color: #ffd7a0; text-decoration: none;">rafabotossi@gmail.com</a></p>
+                    <p><strong>Disponibilidade</strong>Dispon&iacute;vel na Google Play Store</p>
                 </aside>
             </div>
         </section>
@@ -398,7 +399,7 @@
                     <article class="summary-card glass-card">
                         <span>Coleta essencial</span>
                         <strong>Apenas o necess&aacute;rio para conta, pareamento, mensagens e premium.</strong>
-                        <p>O app trata dados de autentica&ccedil;&atilde;o, identificadores t&eacute;cnicos, mensagens criptografadas, notifica&ccedil;&otilde;es e estado do widget.</p>
+                        <p>O app trata dados de autentica&ccedil;&atilde;o, identificadores t&eacute;cnicos, mensagens criptografadas, notifica&ccedil;&otilde;es, estado do widget e metadados t&eacute;cnicos de compra.</p>
                     </article>
                     <article class="summary-card glass-card">
                         <span>Seguran&ccedil;a</span>
@@ -413,7 +414,7 @@
                     <article class="summary-card glass-card">
                         <span>Controle do usu&aacute;rio</span>
                         <strong>O app possui fluxo interno para exclus&atilde;o de conta e limpeza associada.</strong>
-                        <p>Quando acionado, o sistema busca remover conta, pareamento, cache local e registros operacionais vinculados.</p>
+                        <p>Quando acionado, o sistema busca remover conta, pareamento, cache local e registros operacionais vinculados, preservando apenas o que for tecnicamente necess&aacute;rio para seguran&ccedil;a, auditoria ou obriga&ccedil;&otilde;es legais.</p>
                     </article>
                 </section>
 
@@ -439,7 +440,7 @@
                         <li>Conte&uacute;do de mensagens e &uacute;ltimo estado exibido entre o par, armazenados remotamente em formato criptografado.</li>
                         <li>Dados locais do widget, como nome do par, &uacute;ltima mensagem, remetente e data da &uacute;ltima atualiza&ccedil;&atilde;o.</li>
                         <li>Status premium por meio do indicador t&eacute;cnico <code>isPremiumUser</code>.</li>
-                        <li>Dados t&eacute;cnicos de compra consultados junto ao Google Play para confirmar aquisi&ccedil;&otilde;es premium.</li>
+                        <li>Dados t&eacute;cnicos de compra consultados junto ao Google Play para confirmar aquisi&ccedil;&otilde;es premium, como <code>productId</code>, <code>purchaseToken</code>, hash t&eacute;cnico do token, <code>orderId</code>, estado da compra, estado de acknowledgement e carimbo de verifica&ccedil;&atilde;o.</li>
                     </ul>
                 </section>
 
@@ -455,6 +456,7 @@
                         <li>Enviar notifica&ccedil;&otilde;es push e atualizar o widget da tela principal.</li>
                         <li>Mostrar conte&uacute;do recente no widget quando o usu&aacute;rio optar por adicion&aacute;-lo.</li>
                         <li>Identificar e habilitar recursos premium adquiridos pelo Google Play Billing.</li>
+                        <li>Validar compras premium com apoio de backend autenticado e da Google Play Developer API.</li>
                         <li>Manter a opera&ccedil;&atilde;o t&eacute;cnica e a seguran&ccedil;a do servi&ccedil;o.</li>
                     </ul>
                 </section>
@@ -465,15 +467,18 @@
                     <ul>
                         <li>Firebase Authentication para login por e-mail e senha.</li>
                         <li>Cloud Firestore para perfil, pareamento, pedidos de conex&atilde;o, estado atual e mensagens.</li>
-                        <li>Firebase Cloud Messaging para notifica&ccedil;&otilde;es.</li>
+                        <li>Firebase Cloud Messaging para notifica&ccedil;&otilde;es e entrega de eventos t&eacute;cnicos de mensagens.</li>
                         <li>Android DataStore local para cache do widget.</li>
                         <li>Google Play Billing para consulta, processamento e confirma&ccedil;&atilde;o de compras.</li>
-                        <li>Componentes do Android e do Google Play necess&aacute;rios para disponibiliza&ccedil;&atilde;o e funcionamento do app.</li>
+                        <li>Firebase Cloud Functions para valida&ccedil;&atilde;o autenticada de compras premium e atualiza&ccedil;&atilde;o segura do status premium no Firestore.</li>
+                        <li>Google Play Developer API para valida&ccedil;&atilde;o de compras premium pelo backend.</li>
+                        <li>Componentes do Android e do Google Play necess&aacute;rios para disponibiliza&ccedil;&atilde;o do produto na Google Play Store e para funcionamento do app.</li>
                     </ul>
                     <div class="highlight-box">
                         <strong>Configura&ccedil;&atilde;o adicional de seguran&ccedil;a</strong>
                         <p>O aplicativo foi configurado com <code>usesCleartextTraffic=false</code>, n&atilde;o foi projetado para trafegar dados em HTTP inseguro, e tamb&eacute;m possui <code>allowBackup=false</code> com extra&ccedil;&atilde;o de dados desabilitada no manifesto atual.</p>
                     </div>
+                    <p>Para o fluxo de notifica&ccedil;&otilde;es, o app pode armazenar o token FCM no perfil do usu&aacute;rio e uma rotina de backend pode usar esse token para enviar um aviso de nova mensagem ao outro membro do par. O conte&uacute;do principal da mensagem permanece protegido pelo fluxo de criptografia ponta a ponta.</p>
                 </section>
 
                 <section id="seguranca" class="policy-card glass-card">
@@ -516,17 +521,21 @@
                 </section>
 
                 <section id="compras" class="policy-card glass-card">
-                    <span class="section-meta">8. Compras, Google Play Billing e premium</span>
+                    <span class="section-meta">8. Compras, Google Play Billing, backend de valida&ccedil;&atilde;o e premium</span>
                     <h2>Recursos pagos e confirma&ccedil;&atilde;o de compra</h2>
                     <p>O WASUP possui integra&ccedil;&atilde;o com Google Play Billing para produtos premium. Quando o usu&aacute;rio inicia uma compra:</p>
                     <ul>
                         <li>O fluxo de pagamento ocorre pelo ecossistema do Google Play.</li>
                         <li>O app consulta detalhes do produto e compras existentes pela API de billing.</li>
-                        <li>O app pode receber e usar o token ou estado t&eacute;cnico da compra para confirmar a aquisi&ccedil;&atilde;o.</li>
-                        <li>Uma vez confirmada a compra, o sistema pode marcar o usu&aacute;rio como premium por meio do campo t&eacute;cnico <code>isPremiumUser</code>.</li>
+                        <li>O app pode receber e usar o token ou estado t&eacute;cnico da compra para iniciar a valida&ccedil;&atilde;o da aquisi&ccedil;&atilde;o.</li>
+                        <li>O app envia ao backend autenticado apenas os identificadores t&eacute;cnicos necess&aacute;rios para valida&ccedil;&atilde;o da compra, como <code>productId</code> e <code>purchaseToken</code>.</li>
+                        <li>O backend consulta a Google Play Developer API para verificar se a compra existe, se pertence ao produto premium esperado e se est&aacute; conclu&iacute;da.</li>
+                        <li>Uma vez confirmada a compra, o backend pode marcar o usu&aacute;rio como premium por meio do campo t&eacute;cnico <code>isPremiumUser</code>.</li>
+                        <li>O backend tamb&eacute;m pode registrar metadados t&eacute;cnicos da verifica&ccedil;&atilde;o da compra, incluindo hash do token, <code>orderId</code>, hor&aacute;rio da verifica&ccedil;&atilde;o e estado t&eacute;cnico retornado pela Google Play.</li>
                     </ul>
                     <p>Dados financeiros sens&iacute;veis, como n&uacute;mero de cart&atilde;o e forma completa de pagamento, n&atilde;o s&atilde;o armazenados diretamente pelo app.</p>
-                    <p>O projeto tamb&eacute;m possui um endpoint de webhook em infraestrutura Firebase para apoio a confirma&ccedil;&otilde;es de pagamento e atualiza&ccedil;&atilde;o do status premium quando aplic&aacute;vel.</p>
+                    <p>Essas informa&ccedil;&otilde;es s&atilde;o tratadas pelo Google Play conforme as pol&iacute;ticas do pr&oacute;prio Google.</p>
+                    <p>O projeto tamb&eacute;m possui infraestrutura de backend em Firebase e Google Cloud para valida&ccedil;&atilde;o autenticada de compras e atualiza&ccedil;&atilde;o do status premium quando aplic&aacute;vel.</p>
                 </section>
 
                 <section id="terceiros" class="policy-card glass-card">
@@ -539,8 +548,11 @@
                         <li>Cloud Firestore.</li>
                         <li>Firebase Cloud Messaging.</li>
                         <li>Google Play Billing e Google Play.</li>
+                        <li>Firebase Cloud Functions.</li>
+                        <li>Google Play Developer API.</li>
                         <li>Infraestrutura Google e Google Cloud relacionada ao funcionamento desses servi&ccedil;os.</li>
                     </ul>
+                    <p>Esse compartilhamento ocorre apenas para finalidades operacionais, de autentica&ccedil;&atilde;o, banco de dados, notifica&ccedil;&otilde;es, compra in-app, processamento t&eacute;cnico e funcionamento do aplicativo.</p>
                 </section>
 
                 <section id="retencao" class="policy-card glass-card">
@@ -555,6 +567,7 @@
                         <li>Pedidos de pareamento podem ser removidos.</li>
                         <li>C&oacute;digos de pareamento vinculados ao usu&aacute;rio podem ser removidos.</li>
                         <li>O estado compartilhado do par e o hist&oacute;rico remoto de mensagens podem ser removidos.</li>
+                        <li>Os registros t&eacute;cnicos de valida&ccedil;&atilde;o de compra premium vinculados &agrave; conta podem permanecer pelo per&iacute;odo necess&aacute;rio para seguran&ccedil;a, preven&ccedil;&atilde;o a fraude, auditoria t&eacute;cnica, cumprimento de obriga&ccedil;&otilde;es legais ou defesa do servi&ccedil;o.</li>
                         <li>O v&iacute;nculo de pareamento do outro membro remanescente pode ser limpo automaticamente.</li>
                     </ul>
                     <p>Quando a exclus&atilde;o do documento principal do usu&aacute;rio ocorre, uma rotina de backend executa a limpeza complementar dos registros relacionados no Firestore para reduzir a perman&ecirc;ncia de dados residuais operacionais.</p>
@@ -580,10 +593,12 @@
                 </section>
 
                 <section id="acesso" class="policy-card glass-card">
-                    <span class="section-meta">12. Seguran&ccedil;a e acesso</span>
-                    <h2>Restri&ccedil;&otilde;es de leitura e escrita</h2>
+                    <span class="section-meta">12. Seguran&ccedil;a, acesso e anti-fraude</span>
+                    <h2>Restri&ccedil;&otilde;es de leitura, escrita e valida&ccedil;&atilde;o</h2>
                     <p>As regras do Firestore foram configuradas para restringir leitura e escrita, exigindo autentica&ccedil;&atilde;o e valida&ccedil;&otilde;es espec&iacute;ficas para perfis, pareamentos, pedidos de conex&atilde;o e conte&uacute;do criptografado.</p>
                     <p>O campo de status premium tamb&eacute;m possui prote&ccedil;&atilde;o por regras para evitar altera&ccedil;&atilde;o direta indevida pelo cliente.</p>
+                    <p>No fluxo atual, a libera&ccedil;&atilde;o do premium depende de valida&ccedil;&atilde;o no backend autenticado. O app n&atilde;o deve conseguir definir diretamente <code>isPremiumUser</code> no Firestore por conta pr&oacute;pria.</p>
+                    <p>O backend tamb&eacute;m pode usar t&eacute;cnicas de vincula&ccedil;&atilde;o t&eacute;cnica da compra &agrave; conta autenticada e registrar hash do token de compra para ajudar na preven&ccedil;&atilde;o de fraude, reuso indevido ou associa&ccedil;&atilde;o incorreta da compra a outra conta.</p>
                 </section>
 
                 <section id="bases-legais" class="policy-card glass-card">
@@ -604,7 +619,7 @@
                     <p>Pelo funcionamento atual, o app usa:</p>
                     <ul>
                         <li>Internet, para autentica&ccedil;&atilde;o, banco de dados, notifica&ccedil;&otilde;es e recursos online.</li>
-                        <li>Notifica&ccedil;&otilde;es, quando dispon&iacute;vel no Android, para avisos e atualiza&ccedil;&otilde;es do app.</li>
+                        <li>Notifica&ccedil;&otilde;es, incluindo a permiss&atilde;o de notifica&ccedil;&atilde;o do Android quando exigida pelo sistema, para avisos de novas mensagens e atualiza&ccedil;&otilde;es do app.</li>
                         <li>Widget de tela principal, somente quando o usu&aacute;rio opta por adicion&aacute;-lo.</li>
                     </ul>
                     <p>O c&oacute;digo atual analisado n&atilde;o indica coleta de localiza&ccedil;&atilde;o, contatos, fotos, &aacute;udio, arquivos pessoais, microfone, c&acirc;mera, an&uacute;ncios personalizados ou SDK pr&oacute;prio de analytics.</p>
