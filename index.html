@@ -3,39 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WASUP - Comunica&ccedil;&atilde;o Imediata</title>
-    <meta name="description" content="WASUP &eacute; o aplicativo definitivo para casais. Comunica&ccedil;&atilde;o ultrarr&aacute;pida direto na tela inicial.">
+    <title>WASUP - Comunicação Imediata</title>
+    <meta name="description" content="WASUP é o aplicativo definitivo para casais. Comunicação ultrarrápida direto na tela inicial.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body data-page="home">
     <div class="blob blob-1"></div>
     <div class="blob blob-2"></div>
 
     <header class="header">
         <div class="logo">
-            <img src="artes2/wasup_logo.png" alt="Logo do WASUP" class="logo-mark">
+            <img src="artes/wasup_logo.png" alt="Logo do WASUP" class="logo-mark" id="common-logo-alt">
             <span class="logo-text">WASUP</span>
         </div>
         <nav class="nav">
-            <a href="#features">Recursos</a>
-            <a href="#premium">Premium</a>
-            <a href="privacy.html">Privacidade</a>
-            <span class="btn-primary-sm" style="cursor: default; pointer-events: none; opacity: 0.9;">Na Google Play Store</span>
+            <a href="#features" id="nav-features">Recursos</a>
+            <a href="#premium" id="nav-premium">Premium</a>
+            <a href="privacy.html" id="nav-privacy">Privacidade</a>
+            <div class="language-switcher" data-language-switcher></div>
+            <span class="btn-primary-sm nav-store-pill" id="nav-store">Na Google Play Store</span>
         </nav>
     </header>
 
     <main>
         <section class="hero">
             <div class="hero-content">
-                <img src="artes2/wasup_logo.png" alt="Logo principal do app WASUP" class="hero-main-logo">
-                <span class="badge">Novo no Android</span>
-                <h1 class="hero-title">Conecte-se com seu par na <span class="highlight">velocidade da luz</span>.</h1>
-                <p class="hero-subtitle">Esque&ccedil;a bater papo em apps tradicionais. O WASUP envia pequenos recados que aparecem diretamente na tela inicial do celular do seu par atrav&eacute;s de um widget nativo.</p>
+                <img src="artes/wasup_logo.png" alt="Logo principal do app WASUP" class="hero-main-logo" id="hero-logo-alt">
+                <span class="badge" id="hero-badge">Novo no Android</span>
+                <h1 class="hero-title" id="hero-title">Conecte-se com seu par na <span class="highlight">velocidade da luz</span>.</h1>
+                <p class="hero-subtitle" id="hero-subtitle">Esqueça bater papo em apps tradicionais. O WASUP envia pequenos recados que aparecem diretamente na tela inicial do celular do seu par através de um widget nativo.</p>
                 <div class="hero-actions">
-                    <span class="btn-primary">Dispon&iacute;vel na Google Play Store</span>
+                    <span class="btn-primary" id="hero-cta">Disponível na Google Play Store</span>
                 </div>
             </div>
 
@@ -58,20 +59,20 @@
                         <div class="widget-wrapper">
                             <div class="widget-preview glass-card">
                                 <div class="widget-head">
-                                    <img src="artes2/wasup_logo.png" class="widget-icon" alt="">
-                                    <h3>Rafa &#10084;&#65039;</h3>
+                                    <img src="artes/wasup_logo.png" class="widget-icon" alt="">
+                                    <h3 id="widget-partner-name">Rafa ❤️</h3>
                                 </div>
                                 <div class="widget-message-container">
-                                    <p class="widget-message m-1">"T&ocirc; em casa!"</p>
-                                    <p class="widget-message m-2">"Estou com saudades"</p>
-                                    <p class="widget-message m-3">"Te amo!"</p>
-                                    <p class="widget-message m-4">"N&atilde;o esquece o ovo!"</p>
+                                    <p class="widget-message m-1" id="widget-message-1">"Tô em casa!"</p>
+                                    <p class="widget-message m-2" id="widget-message-2">"Estou com saudades"</p>
+                                    <p class="widget-message m-3" id="widget-message-3">"Te amo!"</p>
+                                    <p class="widget-message m-4" id="widget-message-4">"Não esquece o ovo!"</p>
                                 </div>
                                 <div class="widget-time-container">
-                                    <span class="widget-time m-1">Agora mesmo</span>
-                                    <span class="widget-time m-2">H&aacute; 5 min</span>
-                                    <span class="widget-time m-3">H&aacute; 2 horas</span>
-                                    <span class="widget-time m-4">Ontem</span>
+                                    <span class="widget-time m-1" id="widget-time-1">Agora mesmo</span>
+                                    <span class="widget-time m-2" id="widget-time-2">Há 5 min</span>
+                                    <span class="widget-time m-3" id="widget-time-3">Há 2 horas</span>
+                                    <span class="widget-time m-4" id="widget-time-4">Ontem</span>
                                 </div>
                             </div>
                         </div>
@@ -103,48 +104,48 @@
 
         <section id="features" class="features">
             <div class="features-intro">
-                <span class="showcase-tag">Funcionalidades</span>
-                <h2>As telas do app mostram como o WASUP funciona no dia a dia</h2>
-                <p>Da escolha r&aacute;pida de mensagens ao widget na tela inicial, tudo foi pensado para enviar carinho e recados em poucos toques.</p>
+                <span class="showcase-tag" id="features-tag">Funcionalidades</span>
+                <h2 id="features-title">As telas do app mostram como o WASUP funciona no dia a dia</h2>
+                <p id="features-subtitle">Da escolha rápida de mensagens ao widget na tela inicial, tudo foi pensado para enviar carinho e recados em poucos toques.</p>
             </div>
             <div class="features-grid">
                 <div class="feature-card glass-card feature-showcase">
                     <div class="feature-frame">
-                        <img src="artes2/Tela do App.jpeg" alt="Tela principal do app WASUP com categorias e mensagens prontas" class="feature-shot">
+                        <img src="artes/Tela do App.jpeg" alt="Tela principal do app WASUP com categorias e mensagens prontas" class="feature-shot" id="feature-1-alt">
                     </div>
                     <div class="feature-copy">
-                        <h3>&#128172; Mensagens por Categoria</h3>
-                        <p>O app organiza recados prontos em categorias como amor, bom dia, cuidado, apoio e mensagens leves para enviar sem perder tempo.</p>
+                        <h3 id="feature-1-title">&#128172; Mensagens por Categoria</h3>
+                        <p id="feature-1-text">O app organiza recados prontos em categorias como amor, bom dia, cuidado, apoio e mensagens leves para enviar sem perder tempo.</p>
                     </div>
                 </div>
 
                 <div class="feature-card glass-card feature-showcase">
                     <div class="feature-frame">
-                        <img src="artes2/Tela do Widget.jpeg" alt="Widget do WASUP mostrando mensagem recente na tela inicial" class="feature-shot">
+                        <img src="artes/Tela do Widget.jpeg" alt="Widget do WASUP mostrando mensagem recente na tela inicial" class="feature-shot" id="feature-2-alt">
                     </div>
                     <div class="feature-copy">
-                        <h3>&#9889; Zero Fric&ccedil;&atilde;o</h3>
-                        <p>O recado aparece direto na tela inicial do seu par, sem precisar abrir conversa ou navegar por menus.</p>
+                        <h3 id="feature-2-title">&#9889; Zero Fricção</h3>
+                        <p id="feature-2-text">O recado aparece direto na tela inicial do seu par, sem precisar abrir conversa ou navegar por menus.</p>
                     </div>
                 </div>
 
                 <div class="feature-card glass-card feature-showcase">
                     <div class="feature-frame">
-                        <img src="artes2/Tela do Widget2.jpeg" alt="Varia&ccedil;&atilde;o do widget do WASUP com mensagem em destaque" class="feature-shot">
+                        <img src="artes/Tela do Widget2.jpeg" alt="Variação do widget do WASUP com mensagem em destaque" class="feature-shot" id="feature-3-alt">
                     </div>
                     <div class="feature-copy">
-                        <h3>&#10024; Destaque Imediato</h3>
-                        <p>O widget valoriza a mensagem com leitura r&aacute;pida e visual limpo, ideal para pequenos gestos e lembretes importantes.</p>
+                        <h3 id="feature-3-title">&#10024; Destaque Imediato</h3>
+                        <p id="feature-3-text">O widget valoriza a mensagem com leitura rápida e visual limpo, ideal para pequenos gestos e lembretes importantes.</p>
                     </div>
                 </div>
 
                 <div class="feature-card glass-card feature-showcase">
                     <div class="feature-frame">
-                        <img src="artes2/Tela do Widget3.jpeg" alt="Widget do WASUP exibindo outra mensagem enviada" class="feature-shot">
+                        <img src="artes/Tela do Widget3.jpeg" alt="Widget do WASUP exibindo outra mensagem enviada" class="feature-shot" id="feature-4-alt">
                     </div>
                     <div class="feature-copy">
-                        <h3>&#128274; Privacidade em Primeiro Lugar</h3>
-                        <p>As mensagens s&atilde;o protegidas com criptografia em tr&acirc;nsito e cifragem ponta a ponta para manter a experi&ecirc;ncia segura.</p>
+                        <h3 id="feature-4-title">&#128274; Privacidade em Primeiro Lugar</h3>
+                        <p id="feature-4-text">As mensagens são protegidas com criptografia em trânsito e cifragem ponta a ponta para manter a experiência segura.</p>
                     </div>
                 </div>
             </div>
@@ -152,26 +153,28 @@
 
         <section id="premium" class="premium-section">
             <div class="premium-copy glass-card">
-                <span class="showcase-tag">WASUP Premium</span>
-                <h2>Digite o que quiser</h2>
-                <p>Na vers&atilde;o premium, al&eacute;m das mensagens prontas, voc&ecirc; desbloqueia o campo para escrever recados personalizados do seu jeito.</p>
+                <span class="showcase-tag" id="premium-tag">WASUP Premium</span>
+                <h2 id="premium-title">Digite o que quiser</h2>
+                <p id="premium-text">Na versão premium, além das mensagens prontas, você desbloqueia o campo para escrever recados personalizados do seu jeito.</p>
                 <ul class="showcase-list">
-                    <li>Digite mensagens livres direto no app.</li>
-                    <li>Mantenha as categorias prontas para uso instant&acirc;neo.</li>
-                    <li>Envie recados &uacute;nicos quando quiser sair do padr&atilde;o.</li>
+                    <li id="premium-item-1">Digite mensagens livres direto no app.</li>
+                    <li id="premium-item-2">Mantenha as categorias prontas para uso instantâneo.</li>
+                    <li id="premium-item-3">Envie recados únicos quando quiser sair do padrão.</li>
                 </ul>
             </div>
             <div class="premium-visual glass-card">
-                <img src="artes2/wassup_premium.png" alt="Tela do WASUP Premium com entrada de texto livre" class="premium-shot">
+                <img src="artes/wassup_premium.png" alt="Tela do WASUP Premium com entrada de texto livre" class="premium-shot" id="premium-alt">
             </div>
         </section>
     </main>
 
     <footer class="footer">
         <p style="margin-bottom: 16px;">
-            <a href="privacy.html" style="color: var(--text-muted); text-decoration: underline;">Pol&iacute;tica de Privacidade</a>
+            <a href="privacy.html" style="color: var(--text-muted); text-decoration: underline;" id="footer-privacy">Política de Privacidade</a>
         </p>
-        <p>&copy; 2026 WASUP. Todos os direitos reservados. <br><span style="font-size: 0.75rem; opacity: 0.4;">by Rafael Botossi</span></p>
+        <p id="footer-rights">&copy; 2026 WASUP. Todos os direitos reservados. <br><span style="font-size: 0.75rem; opacity: 0.4;">by Rafael Botossi</span></p>
     </footer>
+
+    <script src="i18n.js"></script>
 </body>
 </html>

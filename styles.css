@@ -148,6 +148,8 @@ body::before {
     display: flex;
     gap: 32px;
     align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-end;
 }
 
 .nav a {
@@ -176,6 +178,12 @@ body::before {
 .btn-primary-sm {
     padding: 10px 24px;
     font-size: 0.95rem;
+}
+
+.nav-store-pill {
+    cursor: default;
+    pointer-events: none;
+    opacity: 0.9;
 }
 
 .btn-primary {
@@ -594,6 +602,100 @@ body::before {
     font-size: 0.9rem;
 }
 
+.language-switcher {
+    position: relative;
+}
+
+.language-switcher-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 214, 165, 0.16);
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--text-main);
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.language-switcher-button:hover,
+.language-switcher-button[aria-expanded="true"] {
+    transform: translateY(-1px);
+    border-color: rgba(255, 181, 76, 0.35);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.language-switcher-button .caret {
+    font-size: 0.82rem;
+    opacity: 0.75;
+}
+
+.flag-image {
+    width: 20px;
+    height: 14px;
+    border-radius: 3px;
+    object-fit: cover;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.14);
+    flex: 0 0 auto;
+}
+
+.language-switcher-menu {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    min-width: 220px;
+    padding: 10px;
+    border-radius: 22px;
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02)),
+        rgba(18, 10, 14, 0.96);
+    border: 1px solid rgba(255, 214, 165, 0.12);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+    display: none;
+    z-index: 120;
+}
+
+.language-switcher-menu.open {
+    display: grid;
+    gap: 6px;
+}
+
+.language-option {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 10px 12px;
+    border: 0;
+    border-radius: 16px;
+    background: transparent;
+    color: var(--text-soft);
+    text-align: left;
+    cursor: pointer;
+    font: inherit;
+}
+
+.language-option:hover,
+.language-option.active {
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--text-main);
+}
+
+.language-option .language-name {
+    font-weight: 700;
+}
+
+.language-option .language-code {
+    color: var(--text-muted);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
 @media (max-width: 900px) {
     .header {
         flex-direction: column;
@@ -669,5 +771,20 @@ body::before {
     .android-phone {
         width: min(100%, 340px);
         height: 640px;
+    }
+
+    .language-switcher {
+        width: 100%;
+    }
+
+    .language-switcher-button {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .language-switcher-menu {
+        left: 0;
+        right: 0;
+        min-width: 0;
     }
 }
