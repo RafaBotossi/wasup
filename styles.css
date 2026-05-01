@@ -521,6 +521,59 @@ body::before {
     padding: 24px 8% 72px;
 }
 
+.relationship-section {
+    display: grid;
+    grid-template-columns: minmax(280px, 0.85fr) minmax(320px, 1.15fr);
+    gap: 32px;
+    align-items: start;
+    padding: 8px 8% 72px;
+}
+
+.relationship-copy h2 {
+    font-size: 2.25rem;
+    margin-bottom: 16px;
+}
+
+.relationship-copy p {
+    color: var(--text-muted);
+    line-height: 1.75;
+    max-width: 58ch;
+}
+
+.relationship-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.mini-card {
+    padding: 22px;
+    min-height: 190px;
+    border-radius: 24px;
+}
+
+.mini-card span {
+    display: inline-flex;
+    margin-bottom: 12px;
+    color: #ffd980;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.mini-card strong {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--text-main);
+    font-size: 1.08rem;
+}
+
+.mini-card p {
+    color: var(--text-muted);
+    line-height: 1.65;
+}
+
 .premium-copy,
 .premium-visual {
     padding: 32px;
@@ -732,6 +785,10 @@ body::before {
         padding-top: 12px;
     }
 
+    .relationship-section {
+        grid-template-columns: 1fr;
+    }
+
     .premium-copy,
     .premium-visual {
         padding: 24px;
@@ -746,9 +803,14 @@ body::before {
     .header,
     .hero,
     .features,
+    .relationship-section,
     .premium-section {
         padding-left: 24px;
         padding-right: 24px;
+    }
+
+    .relationship-grid {
+        grid-template-columns: 1fr;
     }
 
     .logo {

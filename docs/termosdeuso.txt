@@ -1,0 +1,136 @@
+TERMOS DE USO DO WASUP
+
+Ultima atualizacao: 01/05/2026
+
+Estes Termos de Uso regulam o acesso e uso do aplicativo WASUP. Ao criar uma conta, entrar ou utilizar o aplicativo, voce declara que leu, entendeu e concorda com estes Termos de Uso e com a Politica de Privacidade disponivel em:
+
+https://wasupapp.com/privacy.html
+
+Se voce nao concordar com estes termos, nao utilize o WASUP.
+
+1. Sobre o WASUP
+
+O WASUP e um aplicativo de comunicacao e conexao entre duas pessoas pareadas. O app permite criar conta, parear com outro usuario por codigo, enviar mensagens rapidas, configurar widgets, salvar dados do relacionamento, registrar proximo evento, usar fotos opcionais e acessar recursos premium mediante assinatura, quando disponivel.
+
+2. Conta do Usuario
+
+Para usar recursos principais do WASUP, voce precisa criar uma conta ou entrar por um metodo de autenticacao disponivel.
+
+Voce e responsavel por:
+
+- informar dados corretos;
+- manter a seguranca da sua conta;
+- nao compartilhar acesso indevido com terceiros;
+- usar o app de forma licita, respeitosa e compativel com estes Termos.
+
+O WASUP pode exigir confirmacao de e-mail antes de liberar o uso completo da conta.
+
+3. Idade e Capacidade
+
+Ao usar o WASUP, voce declara que possui idade e capacidade legal para aceitar estes Termos conforme as leis aplicaveis ao seu local de residencia. Caso voce seja menor de idade, utilize o app somente com autorizacao e supervisao de responsavel legal.
+
+4. Pareamento Entre Usuarios
+
+O WASUP foi projetado para comunicacao entre usuarios pareados. O pareamento depende de codigo, aceite ou fluxo equivalente dentro do app.
+
+Voce deve parear apenas com pessoas que conhece e que consentem em se conectar com voce. O WASUP nao se responsabiliza por pareamentos feitos voluntariamente entre usuarios, nem pelo conteudo compartilhado entre eles.
+
+5. Conteudo do Usuario
+
+Voce pode inserir ou enviar conteudos como nome de perfil, mensagens, datas, titulos de eventos e fotos.
+
+Voce declara que possui direito ou autorizacao para usar os conteudos enviados ao app e que esses conteudos nao violam direitos de terceiros, leis aplicaveis ou estes Termos.
+
+E proibido usar o WASUP para:
+
+- praticar assedio, ameaca, abuso, perseguicao ou constrangimento;
+- enviar conteudo ilegal, ofensivo, discriminatorio, violento ou sexualmente abusivo;
+- violar privacidade, imagem, honra ou direitos de terceiros;
+- tentar acessar contas, dados ou sistemas sem autorizacao;
+- interferir no funcionamento do app, do Firebase, do Google Play ou de outros servicos integrados;
+- burlar limites tecnicos, regras de uso, pagamentos ou assinaturas.
+
+6. Fotos, Mensagens e Criptografia
+
+O WASUP pode criptografar conteudos sensiveis antes do envio ao Firebase, incluindo mensagens e fotos, conforme a implementacao tecnica disponivel no app.
+
+Ainda assim, voce entende que:
+
+- o app depende de servicos de terceiros, como Firebase, Google Cloud e Google Play;
+- nenhum sistema e absolutamente imune a falhas, indisponibilidades ou incidentes;
+- voce deve evitar enviar conteudos que nao queira compartilhar com a pessoa pareada.
+
+7. Recursos Premium e Assinatura
+
+Alguns recursos podem depender de assinatura premium, como mensagens personalizadas e outros recursos indicados dentro do app.
+
+As assinaturas sao processadas pela Google Play. Precos, periodos, renovacoes, cancelamentos, metodos de pagamento e reembolsos seguem as regras e interfaces da Google Play.
+
+O WASUP valida o status premium de forma tecnica, inclusive por verificacao no backend e sincronizacao com servicos da Google Play quando aplicavel. O usuario nao deve tentar manipular o app, a conta, o backend ou os dados locais para obter acesso premium sem assinatura valida.
+
+8. Cancelamento e Reembolso
+
+O cancelamento da assinatura deve ser feito pela Google Play, na area de assinaturas da conta Google usada para a compra.
+
+Reembolsos, quando aplicaveis, seguem as politicas da Google Play. O cancelamento pode impedir renovacoes futuras, mas nao necessariamente remove imediatamente o acesso ja concedido ate o fim do periodo pago, conforme regras da plataforma.
+
+9. Exclusao de Conta e Dados
+
+O WASUP pode oferecer recurso de exclusao de conta dentro do app. Ao solicitar exclusao, dados associados a conta podem ser apagados ou deixar de ser usados, conforme descrito na Politica de Privacidade e conforme viabilidade tecnica.
+
+Alguns registros podem permanecer pelo tempo necessario para cumprimento legal, seguranca, prevencao a fraude, auditoria tecnica, backup temporario ou resolucao de disputas.
+
+10. Limites de Uso e Prevencao de Abuso
+
+Para proteger o app, os usuarios e a infraestrutura, o WASUP pode aplicar limites de uso, incluindo limites de mensagens, uploads, alteracoes de foto, salvamentos de eventos e atualizacoes de dados.
+
+Esses limites podem ser ajustados ao longo do tempo para seguranca, estabilidade, custo operacional e melhoria do servico.
+
+11. Disponibilidade do Servico
+
+O WASUP e fornecido conforme disponibilidade tecnica. O app pode ficar indisponivel ou apresentar limitacoes por motivos como manutencao, falhas de rede, indisponibilidade de Firebase, Google Cloud, Google Play, atualizacoes, bugs, mudancas de plataforma ou eventos fora do controle do desenvolvedor.
+
+Nao garantimos que o app funcionara sem interrupcoes, erros ou perda de dados.
+
+12. Alteracoes no App
+
+O WASUP pode ser atualizado, modificado, limitado ou descontinuado, total ou parcialmente, a qualquer momento. Recursos gratuitos ou premium podem mudar conforme necessidades tecnicas, legais, comerciais ou de seguranca.
+
+13. Propriedade Intelectual
+
+O nome WASUP, identidade visual, codigo, telas, textos, organizacao, recursos e demais elementos do app pertencem aos seus respectivos titulares.
+
+Estes Termos nao transferem ao usuario qualquer direito de propriedade intelectual sobre o aplicativo, marca, codigo-fonte ou materiais associados.
+
+14. Servicos de Terceiros
+
+O app depende de servicos de terceiros, incluindo Firebase, Google Cloud, Google Play, Google Play Billing e componentes do Android.
+
+O uso desses servicos pode estar sujeito a termos e politicas proprios dessas plataformas. O funcionamento de recursos como login, notificacoes, armazenamento, assinatura premium e validacao de compras pode depender da disponibilidade e das regras desses terceiros.
+
+15. Suspensao ou Encerramento de Acesso
+
+Podemos suspender, limitar ou encerrar o acesso de usuarios que violem estes Termos, tentem burlar sistemas, pratiquem abuso, gerem risco ao app ou a terceiros, ou usem o WASUP de forma ilegal ou prejudicial.
+
+16. Limitacao de Responsabilidade
+
+Na maxima extensao permitida por lei, o WASUP nao sera responsavel por danos indiretos, lucros cessantes, perda de dados, indisponibilidade, conflitos entre usuarios, conteudo enviado por usuarios, falhas de terceiros ou uso inadequado do app.
+
+Nada nestes Termos exclui direitos que nao possam ser excluidos pela legislacao aplicavel.
+
+17. Alteracoes Nestes Termos
+
+Podemos atualizar estes Termos de Uso periodicamente. A versao atualizada podera ser publicada no site, no app ou em outro canal oficial.
+
+O uso continuado do WASUP apos alteracoes indica concordancia com os novos termos.
+
+18. Contato
+
+Para duvidas sobre estes Termos de Uso, privacidade, conta ou exclusao de dados, entre em contato pelo canal informado no site oficial ou na Politica de Privacidade:
+
+https://wasupapp.com/privacy.html
+
+19. Lei Aplicavel
+
+Estes Termos serao interpretados conforme a legislacao aplicavel. Eventuais disputas deverao observar as regras legais competentes, incluindo direitos do consumidor quando aplicaveis.
+

@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termos de Uso - WASUP</title>
+    <meta name="description" content="Termos de Uso do WASUP com regras sobre conta, pareamento, conteúdo, recursos premium, exclusão de conta e uso do aplicativo.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            min-height: 100vh;
+        }
+
+        .legal-shell {
+            width: min(1180px, calc(100% - 48px));
+            margin: 0 auto;
+            padding: 40px 0 72px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .legal-hero {
+            position: relative;
+            overflow: hidden;
+            padding: 40px;
+            margin-bottom: 28px;
+            background:
+                radial-gradient(circle at top right, rgba(255, 180, 54, 0.22), transparent 34%),
+                radial-gradient(circle at bottom left, rgba(120, 20, 38, 0.36), transparent 38%),
+                linear-gradient(140deg, rgba(20, 11, 14, 0.94), rgba(30, 14, 18, 0.86));
+        }
+
+        .legal-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 28px;
+            color: #ffd58a;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .legal-grid,
+        .legal-layout {
+            display: grid;
+            gap: 28px;
+        }
+
+        .legal-grid {
+            grid-template-columns: minmax(0, 1.5fr) minmax(280px, 0.9fr);
+            align-items: end;
+        }
+
+        .legal-layout {
+            grid-template-columns: minmax(240px, 280px) minmax(0, 1fr);
+            align-items: start;
+        }
+
+        .eyebrow,
+        .section-meta {
+            display: inline-flex;
+            align-items: center;
+            border-radius: 999px;
+            color: #ffd980;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+        }
+
+        .eyebrow {
+            gap: 10px;
+            padding: 8px 16px;
+            margin-bottom: 18px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            font-size: 0.84rem;
+        }
+
+        .legal-hero h1 {
+            font-size: clamp(2.8rem, 4vw, 4.6rem);
+            line-height: 0.98;
+            margin-bottom: 18px;
+        }
+
+        .hero-intro {
+            max-width: 66ch;
+            color: var(--text-soft);
+            font-size: 1.08rem;
+            line-height: 1.75;
+        }
+
+        .hero-panel,
+        .legal-sidebar,
+        .legal-card {
+            padding: 24px;
+        }
+
+        .hero-panel {
+            border-radius: 26px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 214, 165, 0.12);
+        }
+
+        .hero-panel p {
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .hero-panel p:last-child {
+            margin-bottom: 0;
+        }
+
+        .hero-panel strong {
+            display: block;
+            color: var(--text-main);
+            margin-bottom: 6px;
+        }
+
+        .legal-sidebar {
+            position: sticky;
+            top: 108px;
+        }
+
+        .legal-sidebar h2 {
+            font-size: 1rem;
+            margin-bottom: 16px;
+        }
+
+        .legal-sidebar ul {
+            list-style: none;
+            display: grid;
+            gap: 10px;
+        }
+
+        .legal-sidebar a {
+            color: var(--text-muted);
+            text-decoration: none;
+            line-height: 1.45;
+        }
+
+        .legal-sidebar a:hover {
+            color: var(--text-main);
+        }
+
+        .legal-content {
+            display: grid;
+            gap: 22px;
+        }
+
+        .legal-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .legal-card::before {
+            content: "";
+            position: absolute;
+            inset: 0 auto auto 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, rgba(255, 143, 0, 0.6), rgba(255, 212, 118, 0.2), transparent);
+        }
+
+        .section-meta {
+            margin-bottom: 14px;
+            padding: 6px 12px;
+            background: rgba(255, 176, 55, 0.1);
+            border: 1px solid rgba(255, 201, 112, 0.16);
+            font-size: 0.78rem;
+        }
+
+        .legal-card h2 {
+            font-size: 1.65rem;
+            margin-bottom: 16px;
+        }
+
+        .legal-card p,
+        .legal-card li {
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+
+        .legal-card p + p {
+            margin-top: 14px;
+        }
+
+        .legal-card ul {
+            padding-left: 20px;
+            display: grid;
+            gap: 10px;
+            margin-top: 14px;
+        }
+
+        .legal-card li::marker {
+            color: var(--primary);
+        }
+
+        .legal-card a,
+        .hero-panel a {
+            color: #ffd07a;
+            text-decoration: none;
+        }
+
+        .legal-card a:hover,
+        .hero-panel a:hover {
+            color: #ffffff;
+        }
+
+        @media (max-width: 900px) {
+            .legal-shell {
+                width: min(100% - 28px, 900px);
+                padding-top: 24px;
+            }
+
+            .legal-grid,
+            .legal-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .legal-sidebar {
+                position: static;
+            }
+
+            .legal-hero,
+            .legal-sidebar,
+            .legal-card {
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+<body data-page="terms">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2" style="bottom: 3%; right: 2%;"></div>
+
+    <header class="header">
+        <div class="logo">
+            <img src="artes/wasup_logo.png" alt="Logo do WASUP" class="logo-mark" id="common-logo-alt">
+            <span class="logo-text">WASUP</span>
+        </div>
+        <nav class="nav">
+            <a href="index.html" id="nav-home">Início</a>
+            <a href="privacy.html" id="nav-privacy">Privacidade</a>
+            <a href="termosdeuso.html" id="nav-terms">Termos</a>
+            <div class="language-switcher" data-language-switcher></div>
+        </nav>
+    </header>
+
+    <main class="legal-shell">
+        <section class="legal-hero glass-card">
+            <a href="index.html" class="legal-back" id="terms-back">&larr; Voltar para a página inicial</a>
+            <div class="legal-grid">
+                <div>
+                    <span class="eyebrow" id="terms-eyebrow">Termos de Uso</span>
+                    <h1 id="terms-title">Termos de Uso do WASUP</h1>
+                    <p class="hero-intro" id="terms-intro">Estes Termos regulam o acesso e uso do aplicativo WASUP. Ao criar uma conta, entrar ou utilizar o aplicativo, você declara que leu, entendeu e concorda com estes Termos e com a Política de Privacidade.</p>
+                </div>
+                <aside class="hero-panel">
+                    <p><strong id="terms-updated-label">Última atualização</strong><span id="terms-updated-value">01/05/2026</span></p>
+                    <p><strong id="terms-privacy-label">Política de Privacidade</strong><a href="privacy.html" id="terms-privacy-link">wasupapp.com/privacy.html</a></p>
+                    <p><strong id="terms-contact-label">Contato</strong><a href="mailto:rafabotossi@gmail.com">rafabotossi@gmail.com</a></p>
+                </aside>
+            </div>
+        </section>
+
+        <div class="legal-layout">
+            <aside class="legal-sidebar glass-card">
+                <h2 id="terms-sidebar-title">Nesta página</h2>
+                <ul id="terms-sidebar-list">
+                    <li><a href="#sobre">1. Sobre o WASUP</a></li>
+                    <li><a href="#conta">2. Conta do usuário</a></li>
+                    <li><a href="#idade">3. Idade e capacidade</a></li>
+                    <li><a href="#pareamento">4. Pareamento</a></li>
+                    <li><a href="#conteudo">5. Conteúdo do usuário</a></li>
+                    <li><a href="#privacidade">6. Privacidade e segurança</a></li>
+                    <li><a href="#premium">7. Premium e assinatura</a></li>
+                    <li><a href="#cancelamento">8. Cancelamento e reembolso</a></li>
+                    <li><a href="#exclusao">9. Exclusão de conta</a></li>
+                    <li><a href="#limites">10. Limites de uso</a></li>
+                    <li><a href="#disponibilidade">11. Disponibilidade</a></li>
+                    <li><a href="#alteracoes-app">12. Alterações no app</a></li>
+                    <li><a href="#propriedade">13. Propriedade intelectual</a></li>
+                    <li><a href="#terceiros">14. Serviços de terceiros</a></li>
+                    <li><a href="#suspensao">15. Suspensão de acesso</a></li>
+                    <li><a href="#responsabilidade">16. Responsabilidade</a></li>
+                    <li><a href="#alteracoes-termos">17. Alterações nos termos</a></li>
+                    <li><a href="#contato">18. Contato</a></li>
+                    <li><a href="#lei">19. Lei aplicável</a></li>
+                </ul>
+            </aside>
+
+            <div class="legal-content" id="terms-sections">
+                <section id="sobre" class="legal-card glass-card">
+                    <span class="section-meta">1. Sobre o WASUP</span>
+                    <h2>Comunicação entre duas pessoas pareadas</h2>
+                    <p>O WASUP é um aplicativo de comunicação e conexão entre duas pessoas pareadas. O app permite criar conta, parear com outro usuário por código, enviar mensagens rápidas, configurar widgets, registrar informações do relacionamento, usar fotos opcionais e acessar recursos premium mediante assinatura, quando disponível.</p>
+                </section>
+
+                <section id="conta" class="legal-card glass-card">
+                    <span class="section-meta">2. Conta do usuário</span>
+                    <h2>Responsabilidades da conta</h2>
+                    <p>Para usar recursos principais do WASUP, você precisa criar uma conta ou entrar por um método de autenticação disponível. O app pode exigir confirmação de e-mail antes de liberar o uso completo.</p>
+                    <ul>
+                        <li>Informar dados corretos.</li>
+                        <li>Manter a segurança da sua conta.</li>
+                        <li>Não compartilhar acesso indevido com terceiros.</li>
+                        <li>Usar o app de forma lícita, respeitosa e compatível com estes Termos.</li>
+                    </ul>
+                </section>
+
+                <section id="idade" class="legal-card glass-card">
+                    <span class="section-meta">3. Idade e capacidade</span>
+                    <h2>Uso por menores</h2>
+                    <p>Ao usar o WASUP, você declara que possui idade e capacidade legal para aceitar estes Termos conforme as leis aplicáveis ao seu local de residência. Caso você seja menor de idade, utilize o app somente com autorização e supervisão de responsável legal.</p>
+                </section>
+
+                <section id="pareamento" class="legal-card glass-card">
+                    <span class="section-meta">4. Pareamento entre usuários</span>
+                    <h2>Conexão voluntária</h2>
+                    <p>O pareamento depende de código, aceite ou fluxo equivalente dentro do app. Você deve parear apenas com pessoas que conhece e que consentem em se conectar com você.</p>
+                    <p>O WASUP não se responsabiliza por pareamentos feitos voluntariamente entre usuários, nem pelo conteúdo compartilhado entre eles.</p>
+                </section>
+
+                <section id="conteudo" class="legal-card glass-card">
+                    <span class="section-meta">5. Conteúdo do usuário</span>
+                    <h2>Regras para mensagens, datas, nomes e fotos</h2>
+                    <p>Você pode inserir ou enviar conteúdos como nome de perfil, mensagens, datas, títulos de eventos e fotos. Você declara que possui direito ou autorização para usar esses conteúdos e que eles não violam direitos de terceiros, leis aplicáveis ou estes Termos.</p>
+                    <ul>
+                        <li>Não praticar assédio, ameaça, abuso, perseguição ou constrangimento.</li>
+                        <li>Não enviar conteúdo ilegal, ofensivo, discriminatório, violento ou sexualmente abusivo.</li>
+                        <li>Não violar privacidade, imagem, honra ou direitos de terceiros.</li>
+                        <li>Não tentar acessar contas, sistemas ou informações sem autorização.</li>
+                        <li>Não interferir no funcionamento do app ou de serviços integrados.</li>
+                        <li>Não burlar limites técnicos, regras de uso, pagamentos ou assinaturas.</li>
+                    </ul>
+                </section>
+
+                <section id="privacidade" class="legal-card glass-card">
+                    <span class="section-meta">6. Privacidade e segurança</span>
+                    <h2>Tratamento de dados em documento próprio</h2>
+                    <p>As regras sobre dados pessoais ficam concentradas na <a href="privacy.html">Política de Privacidade</a>.</p>
+                    <p>Ao usar o WASUP, você também concorda em não enviar conteúdo que viole a privacidade, a imagem, a honra ou os direitos de outras pessoas.</p>
+                </section>
+
+                <section id="premium" class="legal-card glass-card">
+                    <span class="section-meta">7. Recursos premium e assinatura</span>
+                    <h2>Google Play Billing</h2>
+                    <p>Alguns recursos podem depender de assinatura premium, como mensagens personalizadas, recursos do próximo evento, fotos do perfil, álbum do relacionamento, widgets com fotos e outros recursos indicados dentro do app. As assinaturas são processadas pela Google Play, e preços, períodos, renovações, cancelamentos, métodos de pagamento e reembolsos seguem as regras e interfaces da Google Play.</p>
+                    <p>O usuário não deve tentar manipular o app, a conta, o backend, o dispositivo ou qualquer regra de cobrança para obter acesso premium sem assinatura válida.</p>
+                </section>
+
+                <section id="cancelamento" class="legal-card glass-card">
+                    <span class="section-meta">8. Cancelamento e reembolso</span>
+                    <h2>Gestão pela Google Play</h2>
+                    <p>O cancelamento da assinatura deve ser feito pela Google Play, na área de assinaturas da conta Google usada para a assinatura. Reembolsos, quando aplicáveis, seguem as políticas da Google Play.</p>
+                    <p>O cancelamento pode impedir renovações futuras, mas não necessariamente remove imediatamente o acesso já concedido até o fim do período pago, conforme regras da plataforma.</p>
+                </section>
+
+                <section id="exclusao" class="legal-card glass-card">
+                    <span class="section-meta">9. Exclusão de conta</span>
+                    <h2>Fluxo interno de exclusão</h2>
+                    <p>O WASUP pode oferecer recurso de exclusão de conta dentro do app. Ao solicitar exclusão, o acesso à conta pode ser encerrado e as informações relacionadas serão tratadas conforme a <a href="privacy.html">Política de Privacidade</a>.</p>
+                    <p>A exclusão pode ser irreversível do ponto de vista da conta do usuário.</p>
+                </section>
+
+                <section id="limites" class="legal-card glass-card">
+                    <span class="section-meta">10. Limites de uso</span>
+                    <h2>Prevenção de abuso</h2>
+                    <p>Para proteger o app, os usuários e a infraestrutura, o WASUP pode aplicar limites de uso, incluindo limites de mensagens, uploads, alterações de foto, salvamentos de eventos e atualizações. Esses limites podem ser ajustados ao longo do tempo para segurança, estabilidade, custo operacional e melhoria do serviço.</p>
+                </section>
+
+                <section id="disponibilidade" class="legal-card glass-card">
+                    <span class="section-meta">11. Disponibilidade do serviço</span>
+                    <h2>Funcionamento conforme disponibilidade técnica</h2>
+                    <p>O WASUP é fornecido conforme disponibilidade técnica. O app pode ficar indisponível ou apresentar limitações por manutenção, falhas de rede, indisponibilidade de serviços integrados, atualizações, bugs, mudanças de plataforma ou eventos fora do controle do desenvolvedor.</p>
+                    <p>Não garantimos que o app funcionará sem interrupções, erros ou perda de dados.</p>
+                </section>
+
+                <section id="alteracoes-app" class="legal-card glass-card">
+                    <span class="section-meta">12. Alterações no app</span>
+                    <h2>Atualizações e mudanças</h2>
+                    <p>O WASUP pode ser atualizado, modificado, limitado ou descontinuado, total ou parcialmente, a qualquer momento. Recursos gratuitos ou premium podem mudar conforme necessidades técnicas, legais, comerciais ou de segurança.</p>
+                </section>
+
+                <section id="propriedade" class="legal-card glass-card">
+                    <span class="section-meta">13. Propriedade intelectual</span>
+                    <h2>Direitos do aplicativo</h2>
+                    <p>O nome WASUP, identidade visual, código, telas, textos, organização, recursos e demais elementos do app pertencem aos seus respectivos titulares. Estes Termos não transferem ao usuário qualquer direito de propriedade intelectual sobre o aplicativo, marca, código-fonte ou materiais associados.</p>
+                </section>
+
+                <section id="terceiros" class="legal-card glass-card">
+                    <span class="section-meta">14. Serviços de terceiros</span>
+                    <h2>Plataformas integradas</h2>
+                    <p>O app pode depender de serviços de terceiros para autenticação, hospedagem, notificações, assinatura premium e funcionamento no Android. O uso desses serviços pode estar sujeito a termos, políticas, disponibilidade e regras próprias dessas plataformas.</p>
+                </section>
+
+                <section id="suspensao" class="legal-card glass-card">
+                    <span class="section-meta">15. Suspensão ou encerramento</span>
+                    <h2>Medidas contra violação</h2>
+                    <p>Podemos suspender, limitar ou encerrar o acesso de usuários que violem estes Termos, tentem burlar sistemas, pratiquem abuso, gerem risco ao app ou a terceiros, ou usem o WASUP de forma ilegal ou prejudicial.</p>
+                </section>
+
+                <section id="responsabilidade" class="legal-card glass-card">
+                    <span class="section-meta">16. Limitação de responsabilidade</span>
+                    <h2>Limites permitidos por lei</h2>
+                    <p>Na máxima extensão permitida por lei, o WASUP não será responsável por danos indiretos, lucros cessantes, perda de dados, indisponibilidade, conflitos entre usuários, conteúdo enviado por usuários, falhas de terceiros ou uso inadequado do app.</p>
+                    <p>Nada nestes Termos exclui direitos que não possam ser excluídos pela legislação aplicável.</p>
+                </section>
+
+                <section id="alteracoes-termos" class="legal-card glass-card">
+                    <span class="section-meta">17. Alterações nestes termos</span>
+                    <h2>Versões futuras</h2>
+                    <p>Podemos atualizar estes Termos de Uso periodicamente. A versão atualizada poderá ser publicada no site, no app ou em outro canal oficial. O uso continuado do WASUP após alterações indica concordância com os novos termos.</p>
+                </section>
+
+                <section id="contato" class="legal-card glass-card">
+                    <span class="section-meta">18. Contato</span>
+                    <h2>Dúvidas sobre termos ou conta</h2>
+                    <p>Para dúvidas sobre estes Termos de Uso, conta, assinatura ou acesso ao app, entre em contato pelo canal informado no site oficial ou na Política de Privacidade.</p>
+                    <p><a href="privacy.html">https://wasupapp.com/privacy.html</a></p>
+                </section>
+
+                <section id="lei" class="legal-card glass-card">
+                    <span class="section-meta">19. Lei aplicável</span>
+                    <h2>Legislação e disputas</h2>
+                    <p>Estes Termos serão interpretados conforme a legislação aplicável. Eventuais disputas deverão observar as regras legais competentes, incluindo direitos do consumidor quando aplicáveis.</p>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p style="margin-bottom: 16px;">
+            <a href="privacy.html" style="color: var(--text-muted); text-decoration: underline;" id="footer-privacy">Política de Privacidade</a>
+            <span style="opacity: 0.45;"> · </span>
+            <a href="termosdeuso.html" style="color: var(--text-muted); text-decoration: underline;" id="footer-terms">Termos de Uso</a>
+        </p>
+        <p id="footer-rights">&copy; 2026 WASUP. Todos os direitos reservados. <br><span style="font-size: 0.75rem; opacity: 0.4;">by Rafael Botossi</span></p>
+    </footer>
+
+    <script src="i18n.js"></script>
+</body>
+</html>
